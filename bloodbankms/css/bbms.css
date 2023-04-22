@@ -16,11 +16,9 @@ header {
     background-color: #FFD9D8;
 }
 
-
-
 .vector {
     position: absolute;
-    bottom: -100px;
+    bottom: 0px;
     width: 100%;
     right: 0;
     z-index: inherit;
@@ -33,9 +31,8 @@ nav {
     align-items: center;
 }
 
-nav img {
+.logo {
     width: 180px;
-    cursor: pointer;
 }
 
 .nav-links {
@@ -115,7 +112,7 @@ nav img {
     display: inline-block;
     text-decoration: none;
     color: white;
-    border: 1px solid #CF1000;
+    border: 1px solid white;
     padding: 10px 30px;
     font-size: 15px;
     font-weight: 600;
@@ -129,7 +126,6 @@ nav img {
 .hm-btn:hover {
     border: 1px solid #CF1000;
     color: #CF1000;
-    border: 1px solid #ffff;
     background: #ffff;
     transition: 0.5s;
 }
