@@ -35,6 +35,7 @@ nav {
 
 nav img {
     width: 180px;
+    cursor: pointer;
 }
 
 .nav-links {
@@ -114,6 +115,7 @@ nav img {
     display: inline-block;
     text-decoration: none;
     color: white;
+    border: 1px solid #CF1000;
     padding: 10px 30px;
     font-size: 15px;
     font-weight: 600;
@@ -126,6 +128,8 @@ nav img {
 
 .hm-btn:hover {
     border: 1px solid #CF1000;
-    background: #CF1000;
-    transition: 3s;
+    color: #CF1000;
+    border: 1px solid #ffff;
+    background: #ffff;
+    transition: 0.5s;
 }
