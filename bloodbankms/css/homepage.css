@@ -62,7 +62,8 @@ button {
 }
 
 .header img {
-  width: 180px;
+  width: 130px;
+  margin-top: 5px;
   margin-left: 30px;
 }
 
@@ -154,7 +155,7 @@ button {
 }
 
 .home-section .home-content h1 {
-  font-size: 140px;
+  font-size: 100px;
   margin: 0;
   color: #ce1000;
   font-weight: 700;
