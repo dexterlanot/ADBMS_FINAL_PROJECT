@@ -71,6 +71,7 @@ button {
   width: 120px;
   margin-top: 5px;
   margin-left: 30px;
+  transition: 0.5s;
 }
 
 .header .nav ul {
@@ -96,7 +97,7 @@ button {
 }
 
 .header.fixed .nav ul li a {
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 .header.fixed .nav ul li {
@@ -498,7 +499,6 @@ button {
     background-position: 0 2.5%;
     border-radius: 5px;
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
-    cursor: pointer;
     transition: 0.5s;
   }
   
@@ -572,3 +572,17 @@ button {
     }
   }
   
+  button {
+    font-weight: 600;
+    background-color: whitesmoke;
+    color: #ce1000;
+    margin-top: 20px;
+    width: 100px;
+    height: 40px;
+    border: transparent ;
+    font-size: 14px;
+    border-radius: 3px;
+    transition: .6s;
+    overflow: hidden;
+    cursor: pointer;
+  }
