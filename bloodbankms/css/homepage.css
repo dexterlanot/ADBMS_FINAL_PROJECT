@@ -509,13 +509,13 @@ button {
   
   .services-subh {
     text-align: center;
-    width: 50%;
+    width: 70%;
   }
   
   .services p {
     color: #575a7b;
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.5;
     letter-spacing: 0.03em;
   }
   
@@ -530,6 +530,7 @@ button {
     border-radius: 50%;
     display: grid;
     place-items: center;
+    transition: 0.5s;
   }
   
   .services .card:hover {
