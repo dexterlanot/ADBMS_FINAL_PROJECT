@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,7 @@
         <img src="../images/login.png">
       </div>
       <div class="login-container">
-        <form action="login.html">
+        <form method="post" action="login.php">
           <h2>Login</h2>
           <div class="input-div one">
             <div class="i">
@@ -23,7 +24,7 @@
             </div>
             <div>
               <h5>Username</h5>
-              <input class="input" type="text">
+              <input class="input" type="text" name="username">
             </div>
           </div>
           <div class="input-div two">
@@ -32,10 +33,10 @@
             </div>
             <div>
               <h5>Password</h5>
-              <input class="input" type="password">
+              <input class="input" type="password" name="password">
             </div>
           </div>
-          <input type="submit" class="btn" value="Login">
+          <button type="submit" class="btn" name="login_admin">Login</button>
         </form>
       </div>
     </div>
