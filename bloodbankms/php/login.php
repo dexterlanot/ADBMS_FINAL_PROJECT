@@ -13,7 +13,7 @@
 <body>  
     <div class="container">
       <div class="img">
-        <img src="../images/login.png">
+        <img src="../images/login2.png">
       </div>
       <div class="login-container">
         <form method="post" action="login.php">
@@ -43,4 +43,3 @@
     <script type="text/javascript" src="../js/login.js"></script>
 </body>
 </html>
-
