@@ -5,8 +5,43 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="header">
-	<h2>Home Page</h2>
+<div class="container">
+	<div class="navigation">
+		<ul>
+			<li>
+				<a href="#">
+					<span class="icon"></span>
+					<span class="title">Blood Bank</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"></span>
+					<span class="title">Blood Bank</span>
+				</a>
+			</li>			<li>
+				<a href="#">
+					<span class="icon"></span>
+					<span class="title">Blood Bank</span>
+				</a>
+			</li>			<li>
+				<a href="#">
+					<span class="icon"></span>
+					<span class="title">Blood Bank</span>
+				</a>
+			</li>			<li>
+				<a href="#">
+					<span class="icon"></span>
+					<span class="title">Blood Bank</span>
+				</a>
+			</li>			<li>
+				<a href="#">
+					<span class="icon"></span>
+					<span class="title">Blood Bank</span>
+				</a>
+			</li>
+		</ul>
+	</div>
 </div>
 </body>
 </html>
