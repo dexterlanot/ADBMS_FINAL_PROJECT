@@ -46,24 +46,24 @@
 				</li>
 				<li>
 					<a href="#">
-						<span class="icon"><i class="fa-solid fa-right-from-bracket"></i></i></span>
+						<span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
 						<span class="title">Sign Out</span>
 					</a>
 				</li>
 			</ul>
 		</div>
 	</div>
+	<div class="main">
+        <div class="topbar">
+            <div class="toggle">
+            <i class="fa-solid fa-bars"></i>
+            </div>
+        <div class="user">
+        	<i class="fa-solid fa-user"></i>
+    	</div>
+        </div>
+    </div>
 
-	
-	<script>
-		let list = document.querySelectorAll('.navigation li');
-		function activeLink(){
-			list.forEach((item) =>
-			item.classList.remove('hovered'))
-			this.classList.add('hovered')
-		}
-		list.forEach((item) =>
-		item.addEventListener('mouseover', activeLink))
-	</script>
+	<script src="../js/side-bar.js"></script>
 </body>
 </html>
