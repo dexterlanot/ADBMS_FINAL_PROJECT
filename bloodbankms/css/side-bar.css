@@ -137,8 +137,7 @@ body {
 }
 
 .navigation.active ul li img {
-    width: 2em;
-    margin: 20px;
+    width: 3em;
     position: relative;
     align-items: center;
     transition: 0.5s;
