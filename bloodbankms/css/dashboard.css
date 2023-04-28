@@ -8,7 +8,7 @@
 }
 
 :root {
-    --red: #ab0606;
+    --red: #da3330;
     --redlight: #f2969e;
     --white: #fff;
     --black: #000;
@@ -29,8 +29,9 @@ body {
     position: fixed;
     width: 300px;
     height: 100%;
-    background-color: var(--red);
+    background-image: linear-gradient(to bottom, #d92d2b, #da3330, #dc3934, #dd3f39, #de443d, #e25147, #e65d52, #e9685c, #ee7c6f, #f38e82, #f6a196, #f9b3aa);
     border-left: 10px solid var(--red);
+    border-image-source: linear-gradient(to bottom, #d92d2b, #da3330, #dc3934, #dd3f39, #de443d, #e25147, #e65d52, #e9685c, #ee7c6f, #f38e82, #f6a196, #f9b3aa);;
     transition: 0.5s;
     overflow: hidden;
 }
@@ -138,11 +139,13 @@ body {
 
 .navigation.active ul li img {
     width: 3em;
+    margin: 5px;
+    margin-top: 1.5em;
     position: relative;
     align-items: center;
     transition: 0.5s;
 }
-
+/******************* NAV BAR ********************/
 .main {
     position: absolute;
     width: calc(100% - 300px);
@@ -189,4 +192,69 @@ body {
     font-size: 1.5em;
     cursor: pointer;
     color: var(--black);
+}
+/******************* DASHBOARD: HOME ********************/
+.home {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: calc(100vh - 70px);
+    top: 70px;
+    transition: 0.5s;
+}
+
+.home.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+
+.cardBox .card {
+    position: relative;
+    background-image: linear-gradient(to right bottom, #d92d2b, #da3330, #dc3934, #dd3f39, #de443d, #e25147, #e65d52, #e9685c, #ee7c6f, #f38e82, #f6a196, #f9b3aa);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cardBox .card .number {
+    position: relative;
+    font-weight: 600;
+    font-size: 2.5em;
+    color: var(--white);
+}
+
+.cardBox .card .cardName {
+    color: var(--white);
+    font-size: 0.9em;
+}
+
+.cardBox .card .iconBox {
+    font-size: 2.5em;
+    color: var(--white);
+}
+
+.cardBox .card:hover {
+    background: white;
+    transition: 0.5s;
+}
+
+.cardBox .card:hover .number,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBox {
+    background: -webkit-linear-gradient(#d92d2b, #da3330, #dc3934, #dd3f39, #de443d, #e25147, #e65d52, #e9685c, #ee7c6f, #f38e82, #f6a196, #f9b3aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.5s;
 }
