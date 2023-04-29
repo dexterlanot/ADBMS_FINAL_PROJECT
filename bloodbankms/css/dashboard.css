@@ -217,6 +217,7 @@ body {
     position: relative;
     width: 100%;
     padding: 20px;
+    padding-top: -20px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: 20px;
@@ -367,7 +368,7 @@ tbody td {
     text-align: center;
 }
 
-tbody button{
+tbody .donor-btn{
     align-items: center;
     justify-content: center;
     background: var(--red);
@@ -379,9 +380,47 @@ tbody button{
     border-radius: 5px;
 }
 
-tbody button:hover {
+tbody .donor-btn:hover {
     transition: transform .3s ease-in;
     transform: scale(1.2);
     cursor: pointer;
 }
 
+/******************* REQUEST ********************/
+
+tbody td .btn-approve,
+tbody td .btn-decline
+{
+    margin-right: 4px;
+}
+
+tbody .btn-approve{
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(109.6deg, rgb(0, 204, 130) 11.2%, rgb(58, 181, 46) 91.7%);
+    color: var(--white);
+    width: 60px;
+    height: 30px;
+    font-size: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+tbody .btn-decline {
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top left, #d92d2b, #da3330, #dc3934, #dd3f39, #de443d, #e25147, #e65d52, #e9685c, #ee7c6f);
+    color: var(--white);
+    width: 60px;
+    height: 30px;
+    font-size: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+tbody .btn-approve:hover,
+tbody .btn-decline:hover {
+    transition: transform .3s ease-in;
+    transform: scale(1.1);
+    cursor: pointer;
+}

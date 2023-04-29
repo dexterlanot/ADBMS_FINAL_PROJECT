@@ -44,7 +44,7 @@
                 echo '<td>' . $row['Address'] . '</td>';
                 echo '<td>' . $row['Date'] . '</td>';
                 echo '<td>';
-                echo '<button type="button" onclick="insertBloodStock('.$row['donorID'].')"> <i class="fa-solid fa-check"></i> </button>';
+                echo '<button class="donor-btn" type="button" onclick="insertBloodStock('.$row['donorID'].')"> <i class="fa-solid fa-check"></i> </button>';
                 echo '</td>';
                 echo '</tr>';
             }

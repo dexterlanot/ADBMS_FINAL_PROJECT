@@ -17,19 +17,19 @@
 					</a>
 				</li>			
 				<li>
-					<a href="#">
+					<a href="#request" onclick="showRequest()">
 						<span class="icon"><i class="fa-solid fa-droplet"></i></span>
 						<span class="title">Blood Request</span>
 					</a>
 				</li>			
 				<li>
-					<a href="#">
+					<a href="#handedover" onclick="showHandedOver()">
 						<span class="icon"><i class="fa-solid fa-solid fa-box"></i></span>
 						<span class="title">Handed Over</span>
 					</a>
 				</li>			
 				<li>
-					<a href="#">
+					<a href="#bloodstock" onclick="showBloodStocks()">
 						<span class="icon"><i class="fa-solid fa-cubes-stacked"></i></span>
 						<span class="title">Blood Stock</span>
 					</a>
