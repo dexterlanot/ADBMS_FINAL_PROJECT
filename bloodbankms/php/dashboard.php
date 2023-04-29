@@ -6,14 +6,14 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <title>Blood Bank Management System</title>
 </head>
 <body>
-    <?php 
-    include('side-bar.php');
+<?php 
+    include ('side-bar.php');
     include_once('server.php');
     ?>
-    <div class="home">
+    <div class="home allContent-section" id="home">
         <div class="cardBox">
             <div class="card">
                 <div>
@@ -109,6 +109,8 @@
                 </div>
             </div>
     </div>
-    <script type="text/javascript" src="../js/dashboard.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/side-bar.js"></script>
+    <script src="../js/hamburger-toggle.js"></script>
 </body>
 </html>

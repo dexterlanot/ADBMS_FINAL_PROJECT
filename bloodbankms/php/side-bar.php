@@ -5,13 +5,13 @@
 							<a href="#"><span class="icon"> <img src="../images/bbmslogo2.png" alt=""></span></a>
 					</li>
 				<li>
-					<a href="../php/dashboard.php">
+					<a href="dashboard.php">
 						<span class="icon"><i class="fa-solid fa-house"></i></span>
 						<span class="title">Home</span>
 					</a>
 				</li>			
 				<li>
-					<a href="../php/donor.php">
+					<a href="#donor" onclick="showDonor()">
 						<span class="icon"><i class="fa-solid fa-hand-holding-medical"></i></span>
 						<span class="title">Donor</span>
 					</a>
