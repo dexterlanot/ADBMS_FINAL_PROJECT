@@ -1,6 +1,10 @@
 <main class="table">
     <div class="table-header">
         <h2> Donor </h2>
+        <div class="search" id="search-bar">
+            <input type="text" id="search" placeholder="Search">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
     </div>
 
     <div class="table-body">
@@ -45,7 +49,32 @@
                 echo '</tr>';
             }
             ?>
+
             <script>
+            $(document).ready(function() {
+            // Listen for input event on search input field
+            $('#search').on('input', function() {
+                // Get search query
+                var query = $(this).val().trim();
+
+                    // Make AJAX call to fetch search results
+                    $.ajax({
+                        url: '../php/donor-search.php',
+                        type: 'POST',
+                        data: { query: query },
+                        success: function(data) {
+                            // Update table with search results
+                            $('.table-body').html(data);
+                        },
+                        error: function() {
+                            alert('Error in fetching search results');
+                        }
+                    });
+                });
+            });
+
+
+
             function insertBloodStock(donorID) {
             $.ajax({
                 url: '../php/insertBloodStock.php',
