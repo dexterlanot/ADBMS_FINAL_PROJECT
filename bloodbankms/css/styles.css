@@ -1,0 +1,392 @@
+:root{
+  --red:#da3330;
+  --pink:#f2969e;
+  --white:#fff;
+  --black:#000;
+  --grey:#f4f4f4;
+  --darkgrey:#393b50;
+}
+
+*{
+  padding:0;
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header{
+  background-color: var(--white);
+  position: -webkit-sticky;
+  position:sticky;
+  top: 0;
+  z-index:99;
+}
+
+.container{
+  display:flex;
+}
+
+header .container{
+  align-items:center;
+}
+
+header .brand-name{
+  flex: 1;
+  padding:0 10px;
+}
+
+header img{
+  width:110px;
+  margin:5px;
+}
+
+header nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  flex: 3;
+}
+
+header nav ul li{
+  display:inline-block;
+  padding:0 1.2em;
+  text-align:center;
+}
+
+header nav ul li a{
+  text-decoration:none;
+  font-size:1.2em;
+  font-weight:500;
+  color:#000;
+}
+
+header nav ul li a:hover{
+  color:var(--red);
+  transition:0.5s ease;
+}
+
+header nav ul li a::after{
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--red);
+  display: block;
+  transition: 0.5s;
+}
+
+header nav ul li a:hover::after {
+  width: 20%;
+}
+
+/* HOME SECTION */
+#home{
+  height:100vh;
+  width:100%;
+  background-color:var(--white);
+  background-image:url("../images/landingpng.png");
+  background-attachment:fixed;
+  background-size:cover;
+  background-position:center;
+}
+
+.home-content{
+  text-align:center;
+  padding:40px;
+}
+
+.home-content h1{
+  font-size:90px;
+  font-weight:700;
+  color: var(--red);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.home-content p{
+  width:50%;
+  margin:auto;
+  color: var(--darkgrey);
+}
+
+.home-content .button{
+  font-size: 1.1rem;
+  margin:20px;
+  margin-top: 60px;
+}
+
+.gs-button{
+  text-decoration:none;
+  background: var(--red);
+  border-radius: 30px;
+  color: var(--white);
+  padding: 10px 20px;
+}
+
+.gs-button:hover{
+  background-color:var(--white);
+  border:1.7px var(--red) solid;
+  color: var(--red);
+}
+
+/* ABOUT */
+#about{
+  width:100%;
+  height:100%;
+  background-color:#ffebee;
+}
+
+.about-img{
+  flex:1;
+}
+
+.about-img img{
+  width:100%;
+  height:100%;
+}
+
+.about-content{
+  flex:2;
+  margin:auto;
+  padding:1.3em 1.5em;
+}
+
+.about-content h1{
+  color: var(--red);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-content p{
+  text-indent:50px;
+  text-align:justify;
+}
+
+.about-content .button{
+  margin-top:20px;
+  position:relative;
+  left:40%;
+}
+
+#about .button a{
+  width:20%;
+  background: var(--red);
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-align:center;
+  text-decoration:none;
+  color: var(--white);
+}
+
+#about .button a:hover{
+  background-color:var(--white);
+  border:1.7px var(--red) solid;
+  color: var(--red);
+}
+
+
+/* BLOODTYPE */
+.bloodtype{
+  width:100%;
+  height:100%;
+  background-image: linear-gradient(#fafafaf3, rgba(255, 255, 255, 0.98)), url("../images/BloodDonation-ai.png");
+  background-position: center;
+  background-size: cover;
+}
+.bloodtype .container{
+  align-items:center;
+}
+
+.blood-content{
+  margin:20px;
+  padding:20px;
+  flex: 2;
+}
+
+.blood-content h1{
+  color: var(--red);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.blood-content p{
+  text-indent:50px;
+  text-align:justify;
+}
+
+.blood-content ul{
+  padding-left:35px;
+}
+
+.blood-img{
+  flex:1;
+}
+
+.blood-img img{
+  width: 80%;
+}
+
+/* SERVICES */
+#services{
+  height:70vh;
+  width:100%;
+  margin:10px;
+}
+
+#services .container{
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+} 
+
+.services-content{
+  flex:1;
+  text-align:center;
+  margin:20px;
+  width:60%;
+}
+
+.services-content h2{
+  padding:20px 0;
+  color: var(--red);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.services-card{
+  flex:1;
+  display:flex;
+  flex-direction:row;
+}
+
+.services-card .card{
+  flex:1;
+  margin:20px;
+  text-align:center;
+  padding:20px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+  width:300px;
+}
+
+.card i{
+  padding:10px;
+  background-color:var(--red);
+  border-radius: 50%;
+  color:var(--white);
+}
+
+.card .fa-solid{
+  width:18px;
+  height:18px;
+}
+
+.card h3{
+  margin:10px;
+}
+
+.card p{
+  margin:10px;
+  color: var(--darkgrey);
+  margin-bottom:30px;
+  height:5rem;
+}
+
+.card a{
+  text-decoration:none;
+  display:block;
+  margin:auto;
+  padding:0 20px;
+  border:none;
+  color: var(--black);
+  font-weight:700;
+}
+
+.card:hover a{
+  color:var(--red);
+  transition:0.5s ease;
+}
+
+.card a::after{
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--red);
+  display: block;
+  transition: 0.5s;
+  margin:auto;
+  z-index:5;
+}
+
+.card a:hover::after{
+  width: 20%;
+}
+
+/* CONTACT */
+#contact{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  margin-top:30px;
+}
+
+.contact-img{
+  flex:1;
+}
+
+.contact-img img{
+  width:100%;
+  height:100%;
+}
+
+.contact-content{
+  flex:2;
+  margin:auto;
+  padding:10px;
+}
+
+.contact-content h1{
+  color: var(--red);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align:center;
+}
+
+.contact-content form{
+  margin:1.2em;
+  padding:1.2em 3em;
+}
+
+.contact-content form input, textarea{
+  display:inline-block;
+  width:100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+form textarea{
+  resize:none;
+}
+
+form input[type="submit"]{
+  padding: 10px 20px;
+  width:20%;
+  background: var(--red);
+  border-radius: 30px;
+  color: var(--white);
+  border:none;
+  display:block;
+  margin:auto;
+}
+
+form input:focus, textarea:focus{
+  outline: none;
+  border: 3px solid var(--red);
+  background-color: var(--grey);
+}
+
+form input[type="submit"]:hover{
+  background-color:var(--white);
+  border:1.7px var(--red) solid;
+  color: var(--red);
+  cursor: pointer;
+}
