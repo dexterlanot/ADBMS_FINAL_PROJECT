@@ -27,7 +27,7 @@
             include_once ('server.php');
 
             // execute the query
-            $sql = "SELECT donorPrefix,donorID,FirstName,LastName,Age,Gender,BloodType,MobileNumber,EmailAddress,Address,Date  
+            $sql = "SELECT *  
                     FROM Donor";
             $result = mysqli_query($db, $sql);
 

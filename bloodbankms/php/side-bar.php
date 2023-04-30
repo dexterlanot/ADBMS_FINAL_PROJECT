@@ -35,7 +35,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="login.php">
 						<span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
 						<span class="title">Sign Out</span>
 					</a>

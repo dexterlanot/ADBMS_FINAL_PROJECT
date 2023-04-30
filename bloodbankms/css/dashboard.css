@@ -371,7 +371,7 @@ tbody td {
 tbody .donor-btn{
     align-items: center;
     justify-content: center;
-    background: var(--red);
+    background: linear-gradient(109.6deg, rgb(0, 204, 130) 11.2%, rgb(58, 181, 46) 91.7%);
     color: var(--white);
     width: 30px;
     height: 20px;

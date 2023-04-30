@@ -13,102 +13,103 @@
     include ('side-bar.php');
     include_once('server.php');
     ?>
-    <div class="home allContent-section" id="home">
-        <div class="cardBox">
-            <div class="card">
-                <div>
-                <div class="number"> 
-                        <?php 
-                        	// Query the number of rows in the table
-                            $sql = 'SELECT COUNT(donorID) AS num_rows FROM donor';
-                            $result = mysqli_query($db, $sql);
-                            if (!$result) {
-                                die('Error executing query: ' . mysqli_error($db));
-                            }
 
-                            // Fetch the result and store the number of rows in a variable
-                            $row = mysqli_fetch_assoc($result);
-                            $num_rows = $row['num_rows'];
-                            echo "$num_rows";
-                         ?> 
-                    </div>
-                    <div class="cardName
-                    <div class="cardName">Donor</div>
-                </div>
-                <div class="iconBox">
-                    <i class="fa-solid fa-hand-holding-medical"></i>
-                </div>
-            </div>
-            <div class="card">
-                <div>
+        <div class="home allContent-section" id="#home">
+            <div class="cardBox">
+                <div class="card">
+                    <div>
                     <div class="number"> 
-                        <?php 
-                        	// Query the number of rows in the table
-                            $sql = 'SELECT COUNT(requestID) AS num_rows FROM request';
-                            $result = mysqli_query($db, $sql);
-                            if (!$result) {
-                                die('Error executing query: ' . mysqli_error($db));
-                            }
+                            <?php 
+                                // Query the number of rows in the table
+                                $sql = 'SELECT COUNT(donorID) AS num_rows FROM donor';
+                                $result = mysqli_query($db, $sql);
+                                if (!$result) {
+                                    die('Error executing query: ' . mysqli_error($db));
+                                }
 
-                            // Fetch the result and store the number of rows in a variable
-                            $row = mysqli_fetch_assoc($result);
-                            $num_rows = $row['num_rows'];
-                            echo "$num_rows";
-                         ?> 
+                                // Fetch the result and store the number of rows in a variable
+                                $row = mysqli_fetch_assoc($result);
+                                $num_rows = $row['num_rows'];
+                                echo "$num_rows";
+                            ?> 
+                        </div>
+                        <div class="cardName
+                        <div class="cardName">Donor</div>
                     </div>
-                    <div class="cardName">Blood Request</div>
+                    <div class="iconBox">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
                 </div>
-                <div class="iconBox">
-                    <i class="fa-solid fa-droplet"></i>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                <div class="number"> 
-                        <?php 
-                        	// Query the number of rows in the table
-                            $sql = 'SELECT COUNT(hoID) AS num_rows FROM handed_over';
-                            $result = mysqli_query($db, $sql);
-                            if (!$result) {
-                                die('Error executing query: ' . mysqli_error($db));
-                            }
+                <div class="card">
+                    <div>
+                        <div class="number"> 
+                            <?php 
+                                // Query the number of rows in the table
+                                $sql = 'SELECT COUNT(requestID) AS num_rows FROM request';
+                                $result = mysqli_query($db, $sql);
+                                if (!$result) {
+                                    die('Error executing query: ' . mysqli_error($db));
+                                }
 
-                            // Fetch the result and store the number of rows in a variable
-                            $row = mysqli_fetch_assoc($result);
-                            $num_rows = $row['num_rows'];
-                            echo "$num_rows";
-                         ?> 
+                                // Fetch the result and store the number of rows in a variable
+                                $row = mysqli_fetch_assoc($result);
+                                $num_rows = $row['num_rows'];
+                                echo "$num_rows";
+                            ?> 
+                        </div>
+                        <div class="cardName">Blood Request</div>
                     </div>
-                    <div class="cardName">Handed Over</div>
+                    <div class="iconBox">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
                 </div>
-                <div class="iconBox">
-                    <i class="fa-solid fa-solid fa-box"></i>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                <div class="number"> 
-                        <?php 
-                        	// Query the number of rows in the table
-                            $sql = 'SELECT COUNT(stockID) AS num_rows FROM blood_stocks';
-                            $result = mysqli_query($db, $sql);
-                            if (!$result) {
-                                die('Error executing query: ' . mysqli_error($db));
-                            }
+                <div class="card">
+                    <div>
+                    <div class="number"> 
+                            <?php 
+                                // Query the number of rows in the table
+                                $sql = 'SELECT COUNT(hoID) AS num_rows FROM handed_over';
+                                $result = mysqli_query($db, $sql);
+                                if (!$result) {
+                                    die('Error executing query: ' . mysqli_error($db));
+                                }
 
-                            // Fetch the result and store the number of rows in a variable
-                            $row = mysqli_fetch_assoc($result);
-                            $num_rows = $row['num_rows'];
-                            echo "$num_rows";
-                         ?> 
+                                // Fetch the result and store the number of rows in a variable
+                                $row = mysqli_fetch_assoc($result);
+                                $num_rows = $row['num_rows'];
+                                echo "$num_rows";
+                            ?> 
+                        </div>
+                        <div class="cardName">Handed Over</div>
                     </div>
-                    <div class="cardName">Blood Stock</div>
+                    <div class="iconBox">
+                        <i class="fa-solid fa-solid fa-box"></i>
+                    </div>
                 </div>
-                <div class="iconBox">
-                    <i class="fa-solid fa-cubes-stacked"></i>
+                <div class="card">
+                    <div>
+                    <div class="number"> 
+                            <?php 
+                                // Query the number of rows in the table
+                                $sql = 'SELECT COUNT(stockID) AS num_rows FROM blood_stocks';
+                                $result = mysqli_query($db, $sql);
+                                if (!$result) {
+                                    die('Error executing query: ' . mysqli_error($db));
+                                }
+
+                                // Fetch the result and store the number of rows in a variable
+                                $row = mysqli_fetch_assoc($result);
+                                $num_rows = $row['num_rows'];
+                                echo "$num_rows";
+                            ?> 
+                        </div>
+                        <div class="cardName">Blood Stock</div>
+                    </div>
+                    <div class="iconBox">
+                        <i class="fa-solid fa-cubes-stacked"></i>
+                    </div>
                 </div>
-            </div>
-    </div>
+        </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../js/side-bar.js"></script>
     <script src="../js/hamburger-toggle.js"></script>

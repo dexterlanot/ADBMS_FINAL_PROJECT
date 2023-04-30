@@ -27,7 +27,7 @@
         <?php
         include_once('server.php');
         // execute the query
-        $sql = "SELECT reqPrefix,requestID,FirstName,LastName,Age,Gender,BloodType,MobileNumber,EmailAddress,Address,Physician,Date,Status  
+        $sql = "SELECT *  
         FROM request";
         $result = mysqli_query($db, $sql);
 
@@ -49,7 +49,7 @@
                 echo '<td><button class="btn-approve" onclick="approveRequest(' . $row['requestID'] . ')">Approve</button>';
                 echo '<button class="btn-decline" onclick="declineRequest(' . $row['requestID'] . ')">Decline</button></td>';
             } else {
-                echo '<td>' . $row['Status'] . '</td>';
+                echo '<td>' . $row['Status'] . '</td></form>';
             }
             echo '</tr>';
         }
@@ -84,8 +84,7 @@
                     type: 'POST',
                     data: { requestID: requestID, newStatus: 'Approved' },
                     success: function(data) {
-                        // Refresh the table with updated data
-                        $('.table-body').html(data);
+                        alert('Blood handed over successfully');
                     },
                     error: function() {
                         alert('Error in updating request status');
@@ -99,8 +98,7 @@
                     type: 'POST',
                     data: { requestID: requestID, newStatus: 'Declined' },
                     success: function(data) {
-                        // Refresh the table with updated data
-                        $('.table-body').html(data);
+                        alert('Sorry there is no available stock');
                     },
                     error: function() {
                         alert('Error in updating request status');

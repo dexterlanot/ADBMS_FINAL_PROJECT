@@ -6,9 +6,12 @@ include_once('server.php');
 $search = $_POST['req_query'];
 
 // Build the SQL query
-$sql = "SELECT reqPrefix,requestID,FirstName,LastName,Age,Gender,BloodType,MobileNumber,EmailAddress,Address,Physician,Date,Status
+$sql = "SELECT *
         FROM request
-        WHERE CONCAT(reqPrefix, requestID) LIKE '%{$search}%'";
+        WHERE CONCAT(reqPrefix, requestID) LIKE '%{$search}%'
+        OR FirstName LIKE '%{$search}%'
+        OR LastName LIKE '%{$search}%'
+        OR BloodType LIKE '%{$search}%'";
 
 // Execute the query and get the result
 $result = mysqli_query($db, $sql);

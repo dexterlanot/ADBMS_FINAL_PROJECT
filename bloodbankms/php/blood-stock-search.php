@@ -6,9 +6,9 @@ include_once('server.php');
 $searchTerm = $_POST['query'];
 
 // Build the SQL query
-$sql = "SELECT *
-        FROM Donor
-        WHERE CONCAT(donorPrefix, donorID) LIKE '%{$searchTerm}%'
+$sql = "SELECT *  
+        FROM stocks
+        WHERE CONCAT(stockPrefix, stockID) LIKE '%{$searchTerm}%'
         OR FirstName LIKE '%{$searchTerm}%'
         OR LastName LIKE '%{$searchTerm}%'
         OR BloodType LIKE '%{$searchTerm}%'";
@@ -21,27 +21,19 @@ echo '<table>';
 echo '<thead>';
 echo '<tr>';
 echo '<th>ID</th>';
+echo '<th>Donor ID</th>';
 echo '<th>Name</th>';
-echo '<th>Age</th>';
-echo '<th>Gender</th>';
 echo '<th>Blood Type</th>';
-echo '<th>Mobile Number</th>';
-echo '<th>Email Address</th>';
-echo '<th>Address</th>';
 echo '<th>Date</th>';
 echo '</tr>';
 echo '</thead>';
 echo '<tbody>';
 while ($row = mysqli_fetch_assoc($result)) {
     echo '<tr>';
+    echo '<td>' . $row['stockPrefix'] . '' . $row['stockID'] . '</td>';
     echo '<td>' . $row['donorPrefix'] . '' . $row['donorID'] . '</td>';
     echo '<td>' . $row['FirstName'] . ' ' . $row['LastName'] . '</td>';
-    echo '<td>' . $row['Age'] . '</td>';
-    echo '<td>' . $row['Gender'] . '</td>';
     echo '<td>' . $row['BloodType'] . '</td>';
-    echo '<td>' . $row['MobileNumber'] . '</td>';
-    echo '<td>' . $row['EmailAddress'] . '</td>';
-    echo '<td>' . $row['Address'] . '</td>';
     echo '<td>' . $row['Date'] . '</td>';
     echo '</tr>';
 }

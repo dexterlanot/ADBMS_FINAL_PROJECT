@@ -1,6 +1,5 @@
 <?php
-include_once ('server.php');
-
+include_once('server.php');
 
 // Check if the request ID and new status were provided
 if (isset($_POST['requestID']) && isset($_POST['newStatus'])) {
@@ -10,32 +9,41 @@ if (isset($_POST['requestID']) && isset($_POST['newStatus'])) {
     $newStatus = $_POST['newStatus'];
 
     // Update the status of the request in the database
-    $query = "UPDATE request SET status = '$newStatus' WHERE id = $requestID";
+    $query = "UPDATE request SET status = '$newStatus' WHERE requestID = $requestID";
     $result = mysqli_query($db, $query);
-    
+
     // Check if the query was successful
     if ($result) {
-        // Fetch the updated data from the database
-        $query = "SELECT CONCATreqPrefix,requestID,FirstName,LastName,Age,Gender,BloodType,MobileNumber,EmailAddress,Address,Physician,Date,Status  
-        FROM request";
-        $result = mysqli_query($db, $query);
-        
-        // Check if the query was successful
-        if ($result) {
-            // Build the HTML for the table rows
-            $rows = '';
-            while ($row = mysqli_fetch_assoc($result)) {
-                $rows .= '<tr><td>' . $row['id'] . '</td><td>' . $row['name'] . '</td><td>' . $row['status'] . '</td></tr>';
+        // Find the stockID that matches the blood type of the approved request
+        if ($newStatus == 'Approved') {
+            $bloodTypeQuery = "SELECT BloodType FROM request WHERE requestID = $requestID";
+            $bloodTypeResult = mysqli_query($db, $bloodTypeQuery);
+
+            if ($bloodTypeResult && mysqli_num_rows($bloodTypeResult) > 0) {
+                $bloodTypeRow = mysqli_fetch_assoc($bloodTypeResult);
+                $bloodType = $bloodTypeRow['BloodType'];
+
+                $stockIDQuery = "SELECT stockID FROM stocks WHERE BloodType = '$bloodType'";
+                $stockIDResult = mysqli_query($db, $stockIDQuery);
+
+                if ($stockIDResult && mysqli_num_rows($stockIDResult) > 0) {
+                    $stockIDRow = mysqli_fetch_assoc($stockIDResult);
+                    $stockID = $stockIDRow['stockID'];
+
+                    // Insert the requestID and stockID into the handed_over table
+                    $handedOverQuery = "INSERT INTO handed_over (requestID, stockID) VALUES ($requestID, $stockID)";
+                    $handedOverResult = mysqli_query($db, $handedOverQuery);
+
+                    if (!$handedOverResult) {
+                        echo 'Error inserting data into handed_over table';
+                    }
+                } else {
+                    echo 'No matching blood stock available.';
+                }
+            } else {
+                echo 'Error fetching blood type from request table';
             }
-            // Send the HTML back to the JavaScript function
-            echo $rows;
-        } else {
-            echo 'Error fetching updated data from the database';
         }
-    } else {
-        echo 'Error updating request status in the database';
     }
-} else {
-    echo 'Error: Request ID or new status not provided';
 }
 ?>
