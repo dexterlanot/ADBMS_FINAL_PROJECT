@@ -35,11 +35,18 @@
 					</a>
 				</li>
 				<li>
+					<a href="">
+						<span class="icon"><i class="fa-solid fa-pen"></i></span>
+						<span class="title">Update Fields</span>
+					</a>
+				</li>
+				<li>
 					<a href="login.php">
 						<span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
 						<span class="title">Sign Out</span>
 					</a>
 				</li>
+				
 			</ul>
 		</div>
 	</div>
