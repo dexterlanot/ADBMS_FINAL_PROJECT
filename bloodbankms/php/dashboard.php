@@ -91,7 +91,7 @@
                     <div class="number"> 
                             <?php 
                                 // Query the number of rows in the table
-                                $sql = 'SELECT COUNT(stockID) AS num_rows FROM blood_stocks';
+                                $sql = 'SELECT COUNT(stockID) AS num_rows FROM blood_stocks WHERE NOT EXISTS ( SELECT * FROM handed_over WHERE blood_stocks.stockID = handed_over.stockID)';
                                 $result = mysqli_query($db, $sql);
                                 if (!$result) {
                                     die('Error executing query: ' . mysqli_error($db));
