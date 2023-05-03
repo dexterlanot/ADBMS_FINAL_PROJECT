@@ -29,6 +29,7 @@ echo '<th>Mobile Number</th>';
 echo '<th>Email Address</th>';
 echo '<th>Address</th>';
 echo '<th>Date</th>';
+echo '<th>Actions</th>';
 echo '</tr>';
 echo '</thead>';
 echo '<tbody>';
@@ -43,6 +44,9 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '<td>' . $row['EmailAddress'] . '</td>';
     echo '<td>' . $row['Address'] . '</td>';
     echo '<td>' . $row['Date'] . '</td>';
+    echo '<td>' . '<button class="donor-btn" type="button" onclick="insertBloodStock('.$row['donorID'].')"> <i class="fa-solid fa-plus"></i> </button>';
+    echo '<button class="donor-btn" type="button" data-toggle="modal" data-target="#editModal" onclick="editDonor('.$row['donorID'].')"> <i class="fa-solid fa-pen"></i> </button>';
+    echo '<button class="donor-btn" type="button" onclick="deleteDonor('.$row['donorID'].')"> <i class="fa-solid fa-trash"></i> </button>' . '</td>';
     echo '</tr>';
 }
 echo '</tbody>';

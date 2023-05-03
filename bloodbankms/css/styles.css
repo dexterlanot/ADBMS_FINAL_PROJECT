@@ -13,6 +13,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   overflow-x: hidden;
 }
@@ -59,7 +63,7 @@ header nav ul li{
 
 header nav ul li a{
   text-decoration:none;
-  font-size:1.2em;
+  font-size:1em;
   font-weight:500;
   color:#000;
 }
@@ -93,12 +97,25 @@ header nav ul li a:hover::after {
   background-position:center;
 }
 
+#home .container{
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
 .home-content{
+  display:flex;
+  flex-direction:column;
+  margin:10px;
+  padding:10px;
+  justify-content:space-between;
+  align-items: center;
   text-align:center;
-  padding:40px;
+  box-sizing:border-box;
 }
 
 .home-content h1{
+  flex:1;
   font-size:90px;
   font-weight:700;
   color: var(--red);
@@ -106,12 +123,14 @@ header nav ul li a:hover::after {
 }
 
 .home-content p{
+  flex:1;
   width:50%;
   margin:auto;
   color: var(--darkgrey);
 }
 
 .home-content .button{
+  flex:1;
   font-size: 1.1rem;
   margin:20px;
   margin-top: 60px;
@@ -123,6 +142,7 @@ header nav ul li a:hover::after {
   border-radius: 30px;
   color: var(--white);
   padding: 10px 20px;
+  transition: 0.5s;
 }
 
 .gs-button:hover{
@@ -150,16 +170,20 @@ header nav ul li a:hover::after {
 .about-content{
   flex:2;
   margin:auto;
-  padding:1.3em 1.5em;
+  padding:4em 2.5em;
 }
 
 .about-content h1{
+  font-size: 30px;
+  margin-bottom: 20px;
   color: var(--red);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .about-content p{
+  margin: 20px 0;
   text-indent:50px;
+  font-size: 14px;
   text-align:justify;
 }
 
@@ -177,6 +201,7 @@ header nav ul li a:hover::after {
   text-align:center;
   text-decoration:none;
   color: var(--white);
+  transition:0.5s;
 }
 
 #about .button a:hover{
@@ -200,7 +225,7 @@ header nav ul li a:hover::after {
 
 .blood-content{
   margin:20px;
-  padding:20px;
+  padding:20px 30px;
   flex: 2;
 }
 
@@ -212,25 +237,29 @@ header nav ul li a:hover::after {
 .blood-content p{
   text-indent:50px;
   text-align:justify;
+  font-size: 14px;
 }
 
 .blood-content ul{
-  padding-left:35px;
+  padding-left:40px;
+  font-size: 14px;
 }
 
 .blood-img{
   flex:1;
+  margin:auto;
 }
 
 .blood-img img{
-  width: 80%;
+  width: 95%;
 }
 
 /* SERVICES */
 #services{
-  height:70vh;
+  height:100%;
   width:100%;
   margin:10px;
+  padding: 10px;
 }
 
 #services .container{
@@ -244,6 +273,7 @@ header nav ul li a:hover::after {
   text-align:center;
   margin:20px;
   width:60%;
+
 }
 
 .services-content h2{
@@ -376,6 +406,7 @@ form input[type="submit"]{
   border:none;
   display:block;
   margin:auto;
+  transition:0.5s;
 }
 
 form input:focus, textarea:focus{
@@ -389,4 +420,13 @@ form input[type="submit"]:hover{
   border:1.7px var(--red) solid;
   color: var(--red);
   cursor: pointer;
+}
+
+/* FOOTER */
+footer{
+  margin:0;
+  padding:1.2rem;
+  text-align:center;
+  background-color:#9e2a2b;
+  color:var(--white);
 }

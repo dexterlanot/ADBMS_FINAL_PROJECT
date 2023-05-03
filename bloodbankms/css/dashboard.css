@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
 
 *{
     margin: 0;
@@ -368,19 +370,19 @@ tbody td {
     text-align: center;
 }
 
-tbody .donor-btn{
+tbody button .donor-btn{
     align-items: center;
     justify-content: center;
     background: linear-gradient(109.6deg, rgb(0, 204, 130) 11.2%, rgb(58, 181, 46) 91.7%);
     color: var(--white);
-    width: 30px;
-    height: 20px;
-    font-size: 12px;
+    width: 20px;
+    height: 30px;
+    font-size: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
-tbody .donor-btn:hover {
+tbody .donor-btn:hover  {
     transition: transform .3s ease-in;
     transform: scale(1.2);
     cursor: pointer;

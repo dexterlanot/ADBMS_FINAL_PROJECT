@@ -20,7 +20,7 @@
                     <th class="text-center"> Email address </th>
                     <th class="text-center"> Address </th>
                     <th class="text-center"> Date </th>
-                    <th class="text-center"> Donated </th>
+                    <th class="text-center"> Actions </th>
                 </tr>
             </thead>
             <?php
@@ -44,9 +44,9 @@
                 echo '<td>' . $row['Address'] . '</td>';
                 echo '<td>' . $row['Date'] . '</td>';
                 echo '<td>';
-                echo '<button class="donor-btn" type="button" onclick="insertBloodStock('.$row['donorID'].')"> <i class="fa-solid fa-check"></i> </button>';
-                echo '</td>';
-                echo '</tr>';
+                echo '<button class="donor-btn" type="button" onclick="insertBloodStock('.$row['donorID'].')"> <i class="fa-solid fa-plus"></i> </button>';
+                echo '<button class="donor-btn" type="button" data-toggle="modal" data-target="#editModal" onclick="editDonor('.$row['donorID'].')"> <i class="fa-solid fa-pen"></i> </button>';
+                echo '<button class="donor-btn" type="button" onclick="deleteDonor('.$row['donorID'].')"> <i class="fa-solid fa-trash"></i> </button>';
             }
             ?>
 
@@ -73,8 +73,6 @@
                 });
             });
 
-
-
             function insertBloodStock(donorID) {
             $.ajax({
                 url: '../php/insertBloodStock.php',
@@ -88,6 +86,7 @@
                 }
             });
             }
+
             </script>
         </table>
     </div>

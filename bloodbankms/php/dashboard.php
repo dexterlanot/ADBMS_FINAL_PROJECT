@@ -6,6 +6,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
     <title>Blood Bank Management System</title>
 </head>
 <body>
@@ -17,7 +20,7 @@
         <div class="home allContent-section" id="#home">
             <div class="cardBox">
                 <div class="card">
-                    <div>
+                    <div> 
                     <div class="number"> 
                             <?php 
                                 // Query the number of rows in the table
@@ -41,7 +44,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div>
+                    <div> 
                         <div class="number"> 
                             <?php 
                                 // Query the number of rows in the table
@@ -78,20 +81,21 @@
                                 $row = mysqli_fetch_assoc($result);
                                 $num_rows = $row['num_rows'];
                                 echo "$num_rows";
-                            ?> 
+                            ?>
                         </div>
                         <div class="cardName">Handed Over</div>
                     </div>
                     <div class="iconBox">
                         <i class="fa-solid fa-solid fa-box"></i>
                     </div>
+                    </a>
                 </div>
                 <div class="card">
                     <div>
-                    <div class="number"> 
+                    <div class="number">
                             <?php 
                                 // Query the number of rows in the table
-                                $sql = 'SELECT COUNT(stockID) AS num_rows FROM blood_stocks';
+                                $sql = 'SELECT COUNT(stockID) AS num_rows FROM blood_stocks WHERE NOT EXISTS ( SELECT * FROM handed_over WHERE blood_stocks.stockID = handed_over.stockID)';
                                 $result = mysqli_query($db, $sql);
                                 if (!$result) {
                                     die('Error executing query: ' . mysqli_error($db));
