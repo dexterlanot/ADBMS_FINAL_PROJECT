@@ -1,0 +1,157 @@
+:root{
+  --red:#da3330;
+  --pink:#f2969e;
+  --white:#fff;
+  --black:#000;
+  --grey:#f4f4f4;
+  --darkgrey:#393b50;
+}
+
+*{
+  padding:0;
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header{
+  background-color: var(--white);
+  position: -webkit-sticky;
+  position:sticky;
+  top: 0;
+  z-index:99;
+}
+
+header .container{
+  display:flex;
+  align-items:center;
+}
+
+header .brand-name{
+  flex: 1;
+  padding:0 10px;
+}
+
+header img{
+  width:110px;
+  margin:5px;
+}
+
+header nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  flex: 3;
+}
+
+header nav ul li{
+  display:inline-block;
+  padding:0 1.2em;
+  text-align:center;
+}
+
+header nav ul li a{
+  text-decoration:none;
+  font-size:1em;
+  font-weight:500;
+  color:#000;
+}
+
+header nav ul li a:hover{
+  color:var(--red);
+  transition:0.5s ease;
+}
+
+header nav ul li a::after{
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--red);
+  display: block;
+  transition: 0.5s;
+}
+
+header nav ul li a:hover::after {
+  width: 20%;
+}
+
+/* FORMS */
+.dataform .container{
+  height:100%;
+  margin:3em 6em;
+  padding:1.3em 2em;
+}
+
+.content h1{
+  color: var(--red);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align:center;
+}
+
+form input, select{
+  display:inline-block;
+  width:100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+form p, form input[type=radio]{
+  display: inline;
+  margin:0;
+  padding:0;
+  box-sizing:none;
+}
+
+form input[type="radio"]{
+  width:20px;
+  margin: 8px 0;
+}
+
+form label[for="age"]{
+  display:block;
+  margin: 8px 0;
+}
+
+form input[type="submit"]{
+  padding: 10px 20px;
+  width:20%;
+  background: var(--red);
+  border-radius: 30px;
+  color: var(--white);
+  border:none;
+  display:block;
+  margin:auto;
+  transition:0.5s;
+}
+
+form input:focus, select:focus{
+  outline: none;
+  border: 3px solid var(--red);
+  background-color: var(--grey);
+}
+
+form input[type="submit"]:hover{
+  background-color:var(--white);
+  border:1.7px var(--red) solid;
+  color: var(--red);
+  cursor: pointer;
+}
+
+
+/* FOOTER */
+footer{
+  margin:0;
+  padding:1.2rem;
+  text-align:center;
+  background-color:#9e2a2b;
+  color:var(--white);
+}

@@ -28,7 +28,7 @@
 
             // execute the query
             $sql = "SELECT *  
-                    FROM Donor";
+                    FROM donor";
             $result = mysqli_query($db, $sql);
 
             // display the results

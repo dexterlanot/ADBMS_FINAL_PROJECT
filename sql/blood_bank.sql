@@ -77,6 +77,32 @@ INSERT INTO `blood_stocks` VALUES (1,'S',2,'D','2023-04-29 10:14:29'),(2,'S',3,'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contact` (
+  `contactID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(50) NOT NULL,
+  `MobileNumber` varchar(11) NOT NULL,
+  `EmailAddress` varchar(100) NOT NULL,
+  `Message` text NOT NULL,
+  PRIMARY KEY (`contactID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact`
+--
+
+LOCK TABLES `contact` WRITE;
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `donor`
 --
 
@@ -128,11 +154,7 @@ CREATE TABLE `handed_over` (
   KEY `stockID` (`stockID`),
   CONSTRAINT `handed_over_ibfk_1` FOREIGN KEY (`requestID`) REFERENCES `request` (`requestID`),
   CONSTRAINT `handed_over_ibfk_2` FOREIGN KEY (`stockID`) REFERENCES `blood_stocks` (`stockID`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-=======
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
->>>>>>> cba2fabc88de3ab3fa6dc1d3c5b28b8de3fa496c
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,11 +163,7 @@ CREATE TABLE `handed_over` (
 
 LOCK TABLES `handed_over` WRITE;
 /*!40000 ALTER TABLE `handed_over` DISABLE KEYS */;
-<<<<<<< HEAD
 INSERT INTO `handed_over` VALUES (2,'HO',5,3,'2023-05-02 01:39:45');
-=======
-INSERT INTO `handed_over` VALUES (1,'HO',5,3,'2023-05-02 00:43:45');
->>>>>>> cba2fabc88de3ab3fa6dc1d3c5b28b8de3fa496c
 /*!40000 ALTER TABLE `handed_over` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,11 +219,7 @@ CREATE TABLE `request` (
 
 LOCK TABLES `request` WRITE;
 /*!40000 ALTER TABLE `request` DISABLE KEYS */;
-<<<<<<< HEAD
 INSERT INTO `request` VALUES (1,'R','Ethe','MacCroary','emaccroary0@posterou',0,'+6394568164','emaccroary0@nydailynews.com','Barangay 14','B+','Ethe MacCroary','2023-04-28 14:59:05','Pending'),(2,'R','Raine','Aizikovitz','raizikovitz1@cnn.com',0,'+6391083570','raizikovitz1@1und1.de','Barangay 2','AB+','Raine Aizikovitz','2023-04-28 14:59:05','Pending'),(3,'R','Ivory','Chamberlain','ichamberlain2@slashd',0,'+6395990107','ichamberlain2@csmonitor.com','Barangay 7','O+','Ivory Chamberlain','2023-04-28 14:59:05','Pending'),(4,'R','Issi','Richardson','irichardson3@nifty.c',0,'+6396649939','irichardson3@comsenz.com','Barangay 2','A+','Issi Richardson','2023-04-28 14:59:05','Pending'),(5,'R','Jacobo','Allebone','jallebone4@go.com',0,'+6392767740','jallebone4@ucla.edu','Barangay 20','B-','Jacobo Allebone','2023-05-02 01:39:45','Approved'),(6,'R','Haroun','Monahan','hmonahan5@nhs.uk',0,'+6390206005','hmonahan5@cdbaby.com','Barangay 3','A+','Haroun Monahan','2023-04-28 14:59:05','Pending'),(7,'R','Kaila','Gazey','kgazey6@hubpages.com',0,'+6395084490','kgazey6@bigcartel.com','Barangay 15','A-','Kaila Gazey','2023-04-28 14:59:05','Pending'),(8,'R','Garvin','Janatka','gjanatka7@biglobe.ne',0,'+6395531507','gjanatka7@networkadvertising.org','Barangay 2','O+','Garvin Janatka','2023-04-28 14:59:05','Pending'),(9,'R','Davon','Franca','dfranca8@cnbc.com',0,'+6399828204','dfranca8@ycombinator.com','Barangay 20','O+','Davon Franca','2023-04-28 14:59:05','Pending'),(10,'R','Cass','Mainston','cmainston9@scientifi',0,'+6395993795','cmainston9@smh.com.au','Barangay 12','B-','Cass Mainston','2023-04-28 14:59:05','Pending');
-=======
-INSERT INTO `request` VALUES (1,'R','Ethe','MacCroary','emaccroary0@posterou',0,'+6394568164','emaccroary0@nydailynews.com','Barangay 14','B+','Ethe MacCroary','2023-04-28 14:59:05','Pending'),(2,'R','Raine','Aizikovitz','raizikovitz1@cnn.com',0,'+6391083570','raizikovitz1@1und1.de','Barangay 2','AB+','Raine Aizikovitz','2023-04-28 14:59:05','Pending'),(3,'R','Ivory','Chamberlain','ichamberlain2@slashd',0,'+6395990107','ichamberlain2@csmonitor.com','Barangay 7','O+','Ivory Chamberlain','2023-04-28 14:59:05','Pending'),(4,'R','Issi','Richardson','irichardson3@nifty.c',0,'+6396649939','irichardson3@comsenz.com','Barangay 2','A+','Issi Richardson','2023-04-28 14:59:05','Pending'),(5,'R','Jacobo','Allebone','jallebone4@go.com',0,'+6392767740','jallebone4@ucla.edu','Barangay 20','B-','Jacobo Allebone','2023-05-02 00:43:45','Approved'),(6,'R','Haroun','Monahan','hmonahan5@nhs.uk',0,'+6390206005','hmonahan5@cdbaby.com','Barangay 3','A+','Haroun Monahan','2023-04-28 14:59:05','Pending'),(7,'R','Kaila','Gazey','kgazey6@hubpages.com',0,'+6395084490','kgazey6@bigcartel.com','Barangay 15','A-','Kaila Gazey','2023-04-28 14:59:05','Pending'),(8,'R','Garvin','Janatka','gjanatka7@biglobe.ne',0,'+6395531507','gjanatka7@networkadvertising.org','Barangay 2','O+','Garvin Janatka','2023-04-28 14:59:05','Pending'),(9,'R','Davon','Franca','dfranca8@cnbc.com',0,'+6399828204','dfranca8@ycombinator.com','Barangay 20','O+','Davon Franca','2023-04-28 14:59:05','Pending'),(10,'R','Cass','Mainston','cmainston9@scientifi',0,'+6395993795','cmainston9@smh.com.au','Barangay 12','B-','Cass Mainston','2023-04-28 14:59:05','Pending');
->>>>>>> cba2fabc88de3ab3fa6dc1d3c5b28b8de3fa496c
 /*!40000 ALTER TABLE `request` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -241,11 +255,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-<<<<<<< HEAD
 /*!50001 VIEW `ho_success` AS select `handed_over`.`hoID` AS `hoID`,`handed_over`.`hoPrefix` AS `hoPrefix`,`request`.`requestID` AS `requestID`,`request`.`reqPrefix` AS `reqPrefix`,`blood_stocks`.`stockID` AS `stockID`,`blood_stocks`.`stockPrefix` AS `stockPrefix`,`request`.`FirstName` AS `FirstName`,`request`.`LastName` AS `LastName`,`handed_over`.`Date` AS `Date` from ((`handed_over` join `request` on(`request`.`requestID` = `handed_over`.`requestID`)) join `blood_stocks` on(`blood_stocks`.`stockID` = `handed_over`.`stockID`)) */;
-=======
-/*!50001 VIEW `ho_success` AS select `handed_over`.`hoID` AS `hoID`,`handed_over`.`hoPrefix` AS `hoPrefix`,`request`.`requestID` AS `requestID`,`request`.`reqPrefix` AS `reqPrefix`,`stocks`.`stockID` AS `stockID`,`stocks`.`stockPrefix` AS `stockPrefix`,`request`.`FirstName` AS `FirstName`,`request`.`LastName` AS `LastName`,`handed_over`.`Date` AS `Date` from ((`handed_over` join `request` on(`request`.`requestID` = `handed_over`.`requestID`)) join `stocks` on(`stocks`.`stockID` = `handed_over`.`stockID`)) */;
->>>>>>> cba2fabc88de3ab3fa6dc1d3c5b28b8de3fa496c
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -277,8 +287,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-<<<<<<< HEAD
--- Dump completed on 2023-05-02 13:59:35
-=======
--- Dump completed on 2023-05-02  9:07:26
->>>>>>> cba2fabc88de3ab3fa6dc1d3c5b28b8de3fa496c
+-- Dump completed on 2023-05-03 18:45:05

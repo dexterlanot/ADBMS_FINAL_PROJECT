@@ -7,7 +7,7 @@ $email    = "";
 $errors = array(); 
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'BLOOD_BANK');
+$db = mysqli_connect('localhost', 'root', '', 'blood_bank');
 
 // LOGIN ADMIN
 if (isset($_POST['login_admin'])) {
