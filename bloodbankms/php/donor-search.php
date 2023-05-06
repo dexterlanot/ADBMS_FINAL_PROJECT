@@ -44,9 +44,19 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '<td>' . $row['EmailAddress'] . '</td>';
     echo '<td>' . $row['Address'] . '</td>';
     echo '<td>' . $row['Date'] . '</td>';
-    echo '<td>' . '<button class="donor-btn" type="button" onclick="insertBloodStock('.$row['donorID'].')"> <i class="fa-solid fa-plus"></i> </button>';
-    echo '<button class="donor-btn" type="button" data-toggle="modal" data-target="#editModal" onclick="editDonor('.$row['donorID'].')"> <i class="fa-solid fa-pen"></i> </button>';
-    echo '<button class="donor-btn" type="button" onclick="deleteDonor('.$row['donorID'].')"> <i class="fa-solid fa-trash"></i> </button>' . '</td>';
+    echo '<td>' . '<button class="btn-add" type="button" onclick="insertBloodStock('.$row['donorID'].')"> <i class="fa-solid fa-check-to-slot"></i> </button>';
+    echo '<button class="btn-edit" type="button" onclick="loadEditRecordPage('.$row['donorID'].')"> <i class="fa-solid fa-pen"></i> </button>';
+    $blood_stock_query = "SELECT * FROM blood_stocks WHERE donorID = ".$row['donorID'];
+    $blood_stock_result = mysqli_query($db, $blood_stock_query);
+    $blood_stock_count = mysqli_num_rows($blood_stock_result);
+
+    // display delete button only if donor has no associated records in blood_stock table
+    if ($blood_stock_count == 0) {
+        echo '<button class="btn-del" type="button" onclick="deleteDonor('.$row['donorID'].')"> <i class="fa-solid fa-trash-can"></i> </button></td>';
+    } else {
+        echo '<button class="btn-del" type="button" disabled style="cursor: not-allowed; background-color: gray; color: white;"> <i class="fa-solid fa-trash-can"></i> </button></td>';
+    echo '</tr>';
+}
     echo '</tr>';
 }
 echo '</tbody>';

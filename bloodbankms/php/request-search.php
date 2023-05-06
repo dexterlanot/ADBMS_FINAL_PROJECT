@@ -31,6 +31,7 @@ echo '<th>Address</th>';
 echo '<th>Physician</th>';
 echo '<th>Date</th>';
 echo '<th>Status</th>';
+echo '<th>Actions</th>';
 echo '</tr>';
 echo '</thead>';
 echo '<tbody>';
@@ -51,6 +52,18 @@ while ($row = mysqli_fetch_assoc($result)) {
         echo '<button class="btn-decline" onclick="declineRequest(' . $row['requestID'] . ')"><i class="fa-solid fa-xmark"></i></button></td>';
     } else {
         echo '<td>' . $row['Status'] . '</td></form>';
+    }
+    echo '<td>';
+    echo '<button class="btn-edit" type="button" onclick="reqloadEditRecordPage('.$row['requestID'].')"> <i class="fa-solid fa-pen"></i> </button>';
+    $req_query = "SELECT * FROM handed_over WHERE requestID = ".$row['requestID'];
+    $req_query_result = mysqli_query($db, $req_query);
+    $req_query_count = mysqli_num_rows($req_query_result);
+
+    // display delete button only if donor has no associated records in blood_stock table
+    if ($req_query_count == 0) {
+        echo '<button class="btn-del" type="button" onclick="deleteReq('.$row['requestID'].')"> <i class="fa-solid fa-trash-can"></i> </button></td>';
+    } else {
+        echo '<button class="btn-del" type="button" disabled style="cursor: not-allowed; background-color: gray; color: white;"> <i class="fa-solid fa-trash-can"></i> </button></td>';
     }
     echo '</tr>';
 }
