@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Become a Donor</title>
+    <title>Request for Blood</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/donate-request.css">
@@ -10,14 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <script>
-      function added(){
-        alert('Form Added');
-      }
-    </script>
-
-  </head>
+    
+</head>
   <body>
     <!-- HEADER -->
     <header>
@@ -41,25 +35,34 @@
     <section class="dataform">
       <div class="container">
         <div class="content">
-          <h1>Become a Donor</h1>
+          <h1>Request for blood</h1>
         </div>
-        <form action="php/donorsite-insert.php" method="POST" onsubmit="added()">
+          <form action="" method="POST">          
           <label for="fname">First Name:</label>
-          <input type="text" name="fname" placeholder="Enter your first name" required>
+          <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
 
           <label for="lname">Last Name:</label>
-          <input type="text" name="lname" placeholder="Enter your last name" required>
+          <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
 
           <p>Gender:</p>
-          <input type="radio" name="gender" value="Male" required>
+          <input type="radio" id="gender" name="gender" value="Male" required>
           <label for="gender">Male</label>
-          <input type="radio" name="gender" value="Female">
+          <input type="radio" id="gender" name="gender" value="Female">
           <label for="gender">Female</label>
-          <input type="radio" name="gender" value="Other">
+          <input type="radio" id="gender" name="gender" value="Other">
           <label for="gender">Other</label>
 
           <label for="age">Age:</label>
-          <input type="number" name="age" placeholder="Enter your age" required>
+          <input type="number" id="age" name="age" placeholder="Enter your age" required>
+          
+          <label for="mobno">Mobile Number:</label>
+          <input type="text" id="mobno" name="mobno" placeholder="Enter your mobile number" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+          <label for="address">Home Address:</label>
+          <input type="text" id="address" name="address" placeholder="Enter your home address" required>
 
           <label for="blood">Blood Type:</label>
           <select name="blood" required>
@@ -74,20 +77,55 @@
             <option value="O-">O-</option>
           </select>
 
-          <label for="mobno">Mobile Number:</label>
-          <input type="text" name="mobno" placeholder="Enter your mobile number" required>
+          <label for="doc">Physician:</label>
+          <input type="text" id="doc" name="doc" placeholder="Enter your physician's name">
 
-          <label for="email">Email:</label>
-          <input type="email" name="email" placeholder="Enter your email address" required>
-
-          <label for="address">Home Address:</label>
-          <input type="text" name="address" placeholder="Enter your home address" required>
-
-          <input type="submit" value="Submit">
+          <input type="submit" name="submit" value="Submit">
         </form>
       </div>
     </section>
     <!-- FORMS -->
+
+    <?php
+//connecting to database
+include ('./php/server.php');
+
+
+if (isset($_POST['submit'])){
+//initializing variables
+$fname= mysqli_real_escape_string($db,$_POST['fname']);
+$lname= mysqli_real_escape_string($db,$_POST['lname']);
+$gender= mysqli_real_escape_string($db,$_POST['gender']);
+$age= mysqli_real_escape_string($db,$_POST['age']);
+$mobno= mysqli_real_escape_string($db,$_POST['mobno']);
+$mail= mysqli_real_escape_string($db,$_POST['email']);
+$address= mysqli_real_escape_string($db,$_POST['address']);
+$blood= mysqli_real_escape_string($db,$_POST['blood']);
+$doc= mysqli_real_escape_string($db,$_POST['doc']);
+
+//insert data into tables
+$sql="INSERT INTO request (FirstName, LastName, Gender, Age, BloodType, MobileNumber, EmailAddress, Address, Physician) 
+VALUES ('$fname', '$lname', '$gender', '$age', '$mobno', '$mail', '$address', '$blood', '$doc')";
+
+$result = mysqli_query($db, $sql);
+
+if($result){
+?>
+
+<script>
+  alert('Request information added successfully.')
+</script>
+
+  <?php
+  } else {
+  ?>
+<script>
+  alert('Failed. Please try again.')
+</script>
+<?php
+}
+}
+?>
 
     <!-- FOOTER -->
     <footer>

@@ -6,7 +6,7 @@
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
     </div>
-
+   
     <div class="table-body">
         <table>
             <thead>
@@ -22,33 +22,43 @@
                     <th class="text-center"> Date </th>
                     <th class="text-center"> Actions </th>
                 </tr>
-            </thead>
-            <?php
-            include_once ('server.php');
+            </thead>        
+<?php
+include_once ('server.php');
 
-            // execute the query
-            $sql = "SELECT *  
-                    FROM donor";
-            $result = mysqli_query($db, $sql);
+// execute the query
+$sql = "SELECT *  
+        FROM donor";
+$result = mysqli_query($db, $sql);
 
-            // display the results
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '<tr>';
-                echo '<td>' . $row['donorPrefix'] . '' . $row['donorID'] . '</td>';
-                echo '<td>' . $row['FirstName'] . ' ' . $row['LastName'] . '</td>';
-                echo '<td>' . $row['Age'] . '</td>';
-                echo '<td>' . $row['Gender'] . '</td>';
-                echo '<td>' . $row['BloodType'] . '</td>';
-                echo '<td>' . $row['MobileNumber'] . '</td>';
-                echo '<td>' . $row['EmailAddress'] . '</td>';
-                echo '<td>' . $row['Address'] . '</td>';
-                echo '<td>' . $row['Date'] . '</td>';
-                echo '<td>';
-                echo '<button class="donor-btn" type="button" onclick="insertBloodStock('.$row['donorID'].')"> <i class="fa-solid fa-plus"></i> </button>';
-                echo '<button class="donor-btn" type="button" data-toggle="modal" data-target="#editModal" onclick="editDonor('.$row['donorID'].')"> <i class="fa-solid fa-pen"></i> </button>';
-                echo '<button class="donor-btn" type="button" onclick="deleteDonor('.$row['donorID'].')"> <i class="fa-solid fa-trash"></i> </button>';
-            }
-            ?>
+// display the results
+while ($row = mysqli_fetch_assoc($result)) {
+    echo '<tr>';
+    echo '<td>' . $row['donorPrefix'] . '' . $row['donorID'] . '</td>';
+    echo '<td>' . $row['FirstName'] . ' ' . $row['LastName'] . '</td>';
+    echo '<td>' . $row['Age'] . '</td>';
+    echo '<td>' . $row['Gender'] . '</td>';
+    echo '<td>' . $row['BloodType'] . '</td>';
+    echo '<td>' . $row['MobileNumber'] . '</td>';
+    echo '<td>' . $row['EmailAddress'] . '</td>';
+    echo '<td>' . $row['Address'] . '</td>';
+    echo '<td>' . $row['Date'] . '</td>';
+    echo '<td>';
+    echo '<button class="btn-add" type="button" onclick="insertBloodStock('.$row['donorID'].')"> <i class="fa-solid fa-check-to-slot"></i> </button>';
+    echo '<button class="btn-edit" type="button" onclick="loadEditRecordPage('.$row['donorID'].')"> <i class="fa-solid fa-pen"></i> </button>';
+    $blood_stock_query = "SELECT * FROM blood_stocks WHERE donorID = ".$row['donorID'];
+    $blood_stock_result = mysqli_query($db, $blood_stock_query);
+    $blood_stock_count = mysqli_num_rows($blood_stock_result);
+
+    // display delete button only if donor has no associated records in blood_stock table
+    if ($blood_stock_count == 0) {
+        echo '<button class="btn-del" type="button" onclick="deleteDonor('.$row['donorID'].')"> <i class="fa-solid fa-trash-can"></i> </button></td>';
+    } else {
+        echo '<button class="btn-del" type="button" disabled style="cursor: not-allowed; background-color: gray; color: white;"> <i class="fa-solid fa-trash-can"></i> </button></td>';
+    echo '</tr>';
+}
+}
+?>
 
             <script>
             $(document).ready(function() {
@@ -80,12 +90,42 @@
                 data: {donorID: donorID},
                 success: function(data) {
                 alert('Blood stock inserted successfully');
+                $('.allContent-section').load('../php/donor.php');
                 },
                 error: function() {
                 alert('Error in inserting blood stock');
                 }
             });
             }
+
+            function deleteDonor(donorID) {
+            $.ajax({
+                url: '../php/donor-delete.php',
+                type: 'POST',
+                data: {donorID: donorID},
+                success: function(data) {
+                    alert('Donor deleted successfully');
+                    $('.allContent-section').load('../php/donor.php');
+                },
+                error: function() {
+                    alert('Error in deleting donor');
+                }
+            });
+            }
+            function loadEditRecordPage(donorID) {
+            $.ajax({
+                url: "donor-edit-record.php",
+                type: "GET",
+                data: { donorID: donorID },
+                success: function(data) {
+                    $(".allContent-section").html(data);
+                },
+                error: function(xhr, status, error) {
+                    console.log("Error: " + error);
+                }
+            });
+            }
+
 
             </script>
         </table>

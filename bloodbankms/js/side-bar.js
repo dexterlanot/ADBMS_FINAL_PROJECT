@@ -9,6 +9,28 @@ function showDonor(){
     });
 }
 
+function insertDonor(){  
+    $.ajax({
+        url:"../php/donor-insert.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent-section').html(data);
+        }
+    });
+}
+
+function insertRequest(){  
+    $.ajax({
+        url:"../php/request-insert.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent-section').html(data);
+        }
+    });
+}
+
 function showRequest(){  
     $.ajax({
         url:"../php/request.php",

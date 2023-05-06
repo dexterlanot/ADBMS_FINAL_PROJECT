@@ -15,13 +15,25 @@
 						<span class="icon"><i class="fa-solid fa-hand-holding-medical"></i></span>
 						<span class="title">Donor</span>
 					</a>
+				</li>
+				<li>
+					<a href="#donor-insert" onclick="insertDonor()">
+						<span class="icon"><i class="fa-solid fa-user-pen"></i></span>
+						<span class="title">Add Donor</span>
+					</a>
 				</li>			
 				<li>
 					<a href="#request" onclick="showRequest()">
 						<span class="icon"><i class="fa-solid fa-droplet"></i></span>
 						<span class="title">Blood Request</span>
 					</a>
-				</li>			
+				</li>		
+				<li>
+					<a href="#request-insert" onclick="insertRequest()">
+						<span class="icon"><i class="fa-solid fa-file-pen"></i></span>
+						<span class="title">Add Blood Request</span>
+					</a>
+				</li>		
 				<li>
 					<a href="#handedover" onclick="showHandedOver()">
 						<span class="icon"><i class="fa-solid fa-solid fa-box"></i></span>
@@ -32,12 +44,6 @@
 					<a href="#bloodstock" onclick="showBloodStocks()">
 						<span class="icon"><i class="fa-solid fa-cubes-stacked"></i></span>
 						<span class="title">Blood Stock</span>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<span class="icon"><i class="fa-solid fa-pen"></i></span>
-						<span class="title">Update Fields</span>
 					</a>
 				</li>
 				<li>

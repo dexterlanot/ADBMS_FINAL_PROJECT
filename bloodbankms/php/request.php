@@ -46,8 +46,8 @@
             echo '<td>' . $row['Physician'] . '</td>';
             echo '<td>' . $row['Date'] . '</td>';
             if ($row['Status'] == 'Pending') {
-                echo '<td><button class="btn-approve" onclick="approveRequest(' . $row['requestID'] . ')">Approve</button>';
-                echo '<button class="btn-decline" onclick="declineRequest(' . $row['requestID'] . ')">Decline</button></td>';
+                echo '<td><button class="btn-approve" onclick="approveRequest(' . $row['requestID'] . ')"><i class="fa-solid fa-check"></i></button>';
+                echo '<button class="btn-decline" onclick="declineRequest(' . $row['requestID'] . ')"><i class="fa-solid fa-xmark"></i></button></td>';
             } else {
                 echo '<td>' . $row['Status'] . '</td></form>';
             }
@@ -85,6 +85,7 @@
                     data: { requestID: requestID, newStatus: 'Approved' },
                     success: function(data) {
                         alert('Blood handed over successfully');
+                        $('.allContent-section').load('../php/request.php');
                     },
                     error: function() {
                         alert('Error in updating request status');
@@ -99,6 +100,7 @@
                     data: { requestID: requestID, newStatus: 'Declined' },
                     success: function(data) {
                         alert('Sorry there is no available stock');
+                        $('.allContent-section').load('../php/request.php');
                     },
                     error: function() {
                         alert('Error in updating request status');

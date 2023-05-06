@@ -366,28 +366,62 @@ tbody tr:hover {
 }
 
 tbody td {
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
 }
 
-tbody button .donor-btn{
-    align-items: center;
-    justify-content: center;
+tbody .btn-add,
+tbody .btn-edit,
+tbody .btn-del {
+    margin-right: 4px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+tbody .btn-add {
     background: linear-gradient(109.6deg, rgb(0, 204, 130) 11.2%, rgb(58, 181, 46) 91.7%);
     color: var(--white);
-    width: 20px;
-    height: 30px;
-    font-size: 10px;
+    font-size: 12px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
-tbody .donor-btn:hover  {
-    transition: transform .3s ease-in;
-    transform: scale(1.2);
-    cursor: pointer;
+tbody .btn-edit {
+    background: linear-gradient(to right bottom, #5486d3, #467ad6, #3e6dd8, #3d5fd8, #434fd6);
+    color: var(--white);
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
 }
 
+tbody .btn-del {
+    background: var(--red);
+    color: var(--white);
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+tbody .btn-add:hover,
+tbody .btn-edit:hover,
+tbody .btn-del:hover {
+    transition: transform .2s ease-in;
+    transform: scale(1.1);
+}
+
+tbody .btn-del:disabled {
+    background-color: rgba(163, 163, 163, 0.4) !important;
+    color: var(--white) !important;
+    font-size: 12px !important;
+    border: none !important;
+    border-radius: 5px !important;
+}
+
+tbody .btn-del:disabled:hover {
+    transition: none !important;
+    transform: none !important;
+}
 /******************* REQUEST ********************/
 
 tbody td .btn-approve,
@@ -401,7 +435,7 @@ tbody .btn-approve{
     justify-content: center;
     background: linear-gradient(109.6deg, rgb(0, 204, 130) 11.2%, rgb(58, 181, 46) 91.7%);
     color: var(--white);
-    width: 60px;
+    width: 30px;
     height: 30px;
     font-size: 10px;
     border: none;
@@ -413,7 +447,7 @@ tbody .btn-decline {
     justify-content: center;
     background: linear-gradient(to top left, #d92d2b, #da3330, #dc3934, #dd3f39, #de443d, #e25147, #e65d52, #e9685c, #ee7c6f);
     color: var(--white);
-    width: 60px;
+    width: 30px;
     height: 30px;
     font-size: 10px;
     border: none;
@@ -422,7 +456,113 @@ tbody .btn-decline {
 
 tbody .btn-approve:hover,
 tbody .btn-decline:hover {
-    transition: transform .3s ease-in;
+    transition: transform .2s ease-in;
     transform: scale(1.1);
     cursor: pointer;
 }
+/*UPDATE FORMS*/
+.edit-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    margin: 3em 6em;
+    padding: 1.3em 2em;
+  }
+  
+  form input,
+  select {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  
+  form p,
+  form input[type=radio] {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    box-sizing: none;
+  }
+  
+  form input[type="radio"] {
+    width: 20px;
+    margin: 2em .5em;
+    display: inline-block;
+    align-items: center;
+    justify-content: centers;
+  }
+  
+  form label[for="age"] {
+    display: block;
+    margin: 8px 0;
+  }
+  
+  form input:focus,
+  select:focus {
+    outline: none;
+    border: 3px solid var(--red);
+    background-color: var(--grey);
+  }
+
+  form button[type="submit"]{
+    font-size: 15px;
+    display:block;
+    margin:auto;
+    width: 10%;
+    height: 40px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #ce1000, #eb4335, #ce1000);
+    cursor: pointer;
+    color: #fff;
+    background-size: 200%;
+    transition: .5s;
+  }
+
+  form button[type="submit"]:hover{
+    background-position: right;
+  }
+
+  /***ADD DONOR/REQUEST***/
+
+  form h2 {
+    padding: 20px;
+    padding-left: 50px;
+  }
+
+  .insert-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    margin: 0 6em;
+    padding: 1.3em 2em;
+  }
+
+  .form-address {
+    margin: 0 6em;
+    padding: 1.3em 2em;
+  }
+
+  form input[type="submit"]{
+    font-size: 15px;
+    display:block;
+    margin:auto;
+    width: 10%;
+    padding: 10px 0px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #ce1000, #eb4335, #ce1000);
+    cursor: pointer;
+    color: #fff;
+    background-size: 200%;
+    transition: .5s;
+  }
+
+  form input[type="submit"]:hover{
+    background-position: right;
+  }
+
