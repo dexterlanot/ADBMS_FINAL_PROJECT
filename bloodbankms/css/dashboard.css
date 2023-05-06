@@ -281,7 +281,7 @@ table {
 
 table, th, td {
     border-collapse: collapse;
-    padding: 16px;
+    padding: 10px;
 }
 
 .table-header {
@@ -465,7 +465,7 @@ tbody .btn-decline:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
-    margin: 3em 6em;
+    margin: 3em 6em 0;
     padding: 1.3em 2em;
   }
   

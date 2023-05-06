@@ -52,18 +52,6 @@
           <input type="radio" id="gender" name="gender" value="Other">
           <label for="gender">Other</label>
 
-          <label for="age">Age:</label>
-          <input type="number" id="age" name="age" placeholder="Enter your age" required>
-          
-          <label for="mobno">Mobile Number:</label>
-          <input type="text" id="mobno" name="mobno" placeholder="Enter your mobile number" required>
-
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-
-          <label for="address">Home Address:</label>
-          <input type="text" id="address" name="address" placeholder="Enter your home address" required>
-
           <label for="blood">Blood Type:</label>
           <select name="blood" required>
             <option value="">--</option>
@@ -76,6 +64,18 @@
             <option value="O+">O+</option>
             <option value="O-">O-</option>
           </select>
+
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" placeholder="Enter your age" required>
+          
+          <label for="mobno">Mobile Number:</label>
+          <input type="text" id="mobno" name="mobno" placeholder="Enter your mobile number" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+          <label for="address">Home Address:</label>
+          <input type="text" id="address" name="address" placeholder="Enter your home address" required>
 
           <label for="doc">Physician:</label>
           <input type="text" id="doc" name="doc" placeholder="Enter your physician's name">
@@ -105,7 +105,7 @@ $doc= mysqli_real_escape_string($db,$_POST['doc']);
 
 //insert data into tables
 $sql="INSERT INTO request (FirstName, LastName, Gender, Age, BloodType, MobileNumber, EmailAddress, Address, Physician) 
-VALUES ('$fname', '$lname', '$gender', '$age', '$mobno', '$mail', '$address', '$blood', '$doc')";
+VALUES ('$fname', '$lname', '$gender', '$age', '$blood', '$mobno', '$mail', '$address', '$doc')";
 
 $result = mysqli_query($db, $sql);
 

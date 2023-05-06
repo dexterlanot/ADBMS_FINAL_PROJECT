@@ -1,4 +1,4 @@
-    <form class="add-form-container" id="insert-donor-form" method="POST">
+    <form id="insert-donor-form" method="POST">
           <h2>Add Donor</h2>
     <div class="insert-form">
             <div class="form-group">
@@ -61,13 +61,12 @@ $(document).ready(function() {
         e.preventDefault(); // prevent the default form submit action
         var formData = $(this).serialize(); // serialize form data
         $.ajax({
-            url: 'donor-insert-submit.php',
+            url: 'donor-insertfile.php',
             type: 'POST',
             data: formData,
             success: function(response) {
                 alert('Donor record added successfully!');
                 $('#insert-donor-form')[0].reset();
-
             },
             error: function(xhr, status, error) {
                 alert('Failed. Please try again.');
