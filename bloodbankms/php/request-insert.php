@@ -1,4 +1,36 @@
-<form class="add-form-container" action="" method="POST">
+<?php
+//connecting to database
+include ('server.php');
+
+
+if (isset($_POST['submit'])){
+//initializing variables
+$fname= mysqli_real_escape_string($db,$_POST['fname']);
+$lname= mysqli_real_escape_string($db,$_POST['lname']);
+$gender= mysqli_real_escape_string($db,$_POST['gender']);
+$age= mysqli_real_escape_string($db,$_POST['age']);
+$mobno= mysqli_real_escape_string($db,$_POST['mobno']);
+$mail= mysqli_real_escape_string($db,$_POST['email']);
+$address= mysqli_real_escape_string($db,$_POST['address']);
+$blood= mysqli_real_escape_string($db,$_POST['blood']);
+$doc= mysqli_real_escape_string($db,$_POST['doc']);
+
+//insert data into tables
+$sql="INSERT INTO request (FirstName, LastName, Gender, Age, BloodType, MobileNumber, EmailAddress, Address, Physician) 
+VALUES ('$fname', '$lname', '$gender', '$age', '$mobno', '$mail', '$address', '$blood', '$doc')";
+
+if(mysqli_query($db, $sql)){
+  echo "<script>alert('Request information added successfully.')</script>";
+  header("Location: ../php/dashboard.php");
+  } else {
+echo "<script>alert('Failed. Please try again.')</script>";
+  }  
+}
+?>
+
+
+
+<form class="add-form-container" action="request-insert.php" method="POST">
           <h2>Add Donor</h2>
     <div class="insert-form">
             <div class="form-group">
@@ -58,44 +90,3 @@
         </div>
     </form>
     <!-- FORMS -->
-
-    <?php
-//connecting to database
-include ('server.php');
-
-
-if (isset($_POST['submit'])){
-//initializing variables
-$fname= mysqli_real_escape_string($db,$_POST['fname']);
-$lname= mysqli_real_escape_string($db,$_POST['lname']);
-$gender= mysqli_real_escape_string($db,$_POST['gender']);
-$age= mysqli_real_escape_string($db,$_POST['age']);
-$mobno= mysqli_real_escape_string($db,$_POST['mobno']);
-$mail= mysqli_real_escape_string($db,$_POST['email']);
-$address= mysqli_real_escape_string($db,$_POST['address']);
-$blood= mysqli_real_escape_string($db,$_POST['blood']);
-$doc= mysqli_real_escape_string($db,$_POST['doc']);
-
-//insert data into tables
-$sql="INSERT INTO request (FirstName, LastName, Gender, Age, BloodType, MobileNumber, EmailAddress, Address, Physician) 
-VALUES ('$fname', '$lname', '$gender', '$age', '$mobno', '$mail', '$address', '$blood', '$doc')";
-
-$result = mysqli_query($db, $sql);
-
-if($result){
-?>
-
-<script>
-  alert('Request information added successfully.')
-</script>
-
-  <?php
-  } else {
-  ?>
-<script>
-  alert('Failed. Please try again.')
-</script>
-<?php
-}
-}
-?>

@@ -50,7 +50,7 @@
           <input type="radio" id="gender" name="gender" value="Female">
           <label for="gender">Female</label>
           <input type="radio" id="gender" name="gender" value="Other">
-          <label for="gender">Other</label>
+          <label for="gender">Other</label><br>
 
           <label for="blood">Blood Type:</label>
           <select name="blood" required>

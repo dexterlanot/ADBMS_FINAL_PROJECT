@@ -106,7 +106,7 @@ form input, select{
 
 form p, form input[type=radio]{
   display: inline;
-  margin:0;
+  margin:8px 0;
   padding:0;
   box-sizing:none;
 }
@@ -116,7 +116,7 @@ form input[type="radio"]{
   margin: 8px 0;
 }
 
-form label[for="age"]{
+form label[for="age"], form label[for="blood"]{
   display:block;
   margin: 8px 0;
 }

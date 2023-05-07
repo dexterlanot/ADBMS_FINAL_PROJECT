@@ -56,7 +56,7 @@
           <input type="number" id="age" name="age" placeholder="Enter your age" required>
 
           <label for="blood">Blood Type:</label>
-          <select name="blood" required>
+          <select name="blood" id="blood" required>
             <option value="">--</option>
             <option value="A+">A+</option>
             <option value="A-">A-</option>

@@ -7,7 +7,7 @@ $searchTerm = $_POST['query'];
 
 // Build the SQL query
 $sql = "SELECT *
-        FROM Donor
+        FROM donor
         WHERE CONCAT(donorPrefix, donorID) LIKE '%{$searchTerm}%'
         OR FirstName LIKE '%{$searchTerm}%'
         OR LastName LIKE '%{$searchTerm}%'

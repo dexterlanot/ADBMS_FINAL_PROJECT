@@ -17,11 +17,11 @@ if (isset($_POST['submit'])){
     $sql="INSERT INTO donor (FirstName, LastName, Gender, Age, BloodType, MobileNumber, EmailAddress, Address) 
     VALUES ('$fname', '$lname', '$gender', '$age', '$blood', '$mobno', '$mail', '$address')";
 
-    $result = mysqli_query($db, $sql);
-
-    if($result){
-        echo "success";
+    if(mysqli_query($db, $sql)){
+    header("Location: ../php/dashboard.php");
+    exit();
     } else {
-        echo "error";
+        echo "error"; 
     }
 }
+?>
