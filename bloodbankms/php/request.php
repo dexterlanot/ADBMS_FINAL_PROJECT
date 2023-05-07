@@ -47,7 +47,21 @@
             echo '<td>' . $row['Physician'] . '</td>';
             echo '<td>' . $row['Date'] . '</td>';
             if ($row['Status'] == 'Pending') {
-                echo '<td><button class="btn-approve" onclick="approveRequest(' . $row['requestID'] . ')"><i class="fa-solid fa-check"></i></button>';
+                // Get the person's blood type
+                $blood_type = $row['BloodType'];
+
+                // Check if the person's blood type exists in the stocks table
+                $stocks_query = "SELECT COUNT(*) FROM stocks WHERE BloodType = '$blood_type'";
+                $stocks_query_result = mysqli_query($db, $stocks_query);
+                $stocks_count = mysqli_fetch_array($stocks_query_result)[0];
+
+                // Display the approve button with the appropriate state
+                if ($stocks_count > 0) {
+                    echo '<td><button class="btn-approve" onclick="approveRequest(' . $row['requestID'] . ')"><i class="fa-solid fa-check"></i></button>';
+                } else {
+                    echo '<td><button class="btn-approve" disabled style="cursor: not-allowed; background-color: gray; color: white;"><i class="fa-solid fa-check"></i></button>';
+                }
+                            //echo '<td><button class="btn-approve" onclick="approveRequest(' . $row['requestID'] . ')"><i class="fa-solid fa-check"></i></button>';
                 echo '<button class="btn-decline" onclick="declineRequest(' . $row['requestID'] . ')"><i class="fa-solid fa-xmark"></i></button></td>';
             } else {
                 echo '<td>' . $row['Status'] . '</td></form>';

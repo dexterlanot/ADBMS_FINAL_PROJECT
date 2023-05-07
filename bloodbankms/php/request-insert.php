@@ -17,7 +17,7 @@ $doc= mysqli_real_escape_string($db,$_POST['doc']);
 
 //insert data into tables
 $sql="INSERT INTO request (FirstName, LastName, Gender, Age, BloodType, MobileNumber, EmailAddress, Address, Physician) 
-VALUES ('$fname', '$lname', '$gender', '$age', '$mobno', '$mail', '$address', '$blood', '$doc')";
+VALUES ('$fname', '$lname', '$gender', '$age', '$blood', '$mobno', '$mail', '$address', '$doc')";
 
 if(mysqli_query($db, $sql)){
   echo "<script>alert('Request information added successfully.')</script>";

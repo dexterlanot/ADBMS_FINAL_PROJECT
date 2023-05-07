@@ -422,6 +422,19 @@ tbody .btn-del:disabled:hover {
     transition: none !important;
     transform: none !important;
 }
+
+tbody .btn-approve:disabled {
+    background-color: rgba(163, 163, 163, 0.4) !important;
+    color: var(--white) !important;
+    font-size: 12px !important;
+    border: none !important;
+    border-radius: 5px !important;
+}
+
+tbody .btn-approve:disabled:hover {
+    transition: none !important;
+    transform: none !important;
+}
 /******************* REQUEST ********************/
 
 tbody td .btn-approve,
@@ -433,7 +446,7 @@ tbody td .btn-decline
 tbody .btn-approve{
     align-items: center;
     justify-content: center;
-    background: linear-gradient(109.6deg, rgb(0, 204, 130) 11.2%, rgb(58, 181, 46) 91.7%);
+    background: rgb(0, 187, 62);
     color: var(--white);
     width: 30px;
     height: 30px;
