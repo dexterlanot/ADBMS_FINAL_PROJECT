@@ -119,7 +119,7 @@ header nav ul li a:hover::after {
   font-size:90px;
   font-weight:700;
   color: var(--red);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);*/
 }
 
 .home-content p{
@@ -177,7 +177,7 @@ header nav ul li a:hover::after {
   font-size: 30px;
   margin-bottom: 20px;
   color: var(--red);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);*/
 }
 
 .about-content p{
@@ -231,7 +231,7 @@ header nav ul li a:hover::after {
 
 .blood-content h1{
   color: var(--red);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);*/
 }
 
 .blood-content p{
@@ -273,13 +273,12 @@ header nav ul li a:hover::after {
   text-align:center;
   margin:20px;
   width:60%;
-
 }
 
 .services-content h2{
   padding:20px 0;
   color: var(--red);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);*/
 }
 
 .services-card{
@@ -376,7 +375,7 @@ header nav ul li a:hover::after {
 
 .contact-content h1{
   color: var(--red);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);*/
   text-align:center;
 }
 

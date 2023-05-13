@@ -46,21 +46,65 @@
             echo '<td>' . $row['Address'] . '</td>';
             echo '<td>' . $row['Physician'] . '</td>';
             echo '<td>' . $row['Date'] . '</td>';
+            // if ($row['Status'] == 'Pending') {
+            //     // Get the person's blood type
+            //     $blood_type = $row['BloodType'];
+
+            //     // Check if the person's blood type exists in the stocks table
+            //     $stocks_query = "SELECT COUNT(*) FROM stocks WHERE BloodType = '$blood_type'";
+            //     $stocks_query_result = mysqli_query($db, $stocks_query);
+            //     $stocks_count = mysqli_fetch_array($stocks_query_result)[0];
+
+            //     // Display the approve button with the appropriate state
+            //     if ($stocks_count > 0) {
+            //         echo '<td><button class="btn-approve" onclick="approveRequest(' . $row['requestID'] . ')"><i class="fa-solid fa-check"></i></button>';
+            //     } else {
+            //         echo '<td><button class="btn-approve" disabled style="cursor: not-allowed; background-color: gray; color: white;"><i class="fa-solid fa-check"></i></button>';
+            //     }
             if ($row['Status'] == 'Pending') {
                 // Get the person's blood type
-                $blood_type = $row['BloodType'];
-
-                // Check if the person's blood type exists in the stocks table
-                $stocks_query = "SELECT COUNT(*) FROM stocks WHERE BloodType = '$blood_type'";
+                $recipient_blood_type = $row['BloodType'];
+            
+                // Define the compatible blood types
+                $compatible_blood_types = array();
+                switch ($recipient_blood_type) {
+                    case 'A+':
+                        $compatible_blood_types = array('A+', 'A-', 'O+', 'O-');
+                        break;
+                    case 'A-':
+                        $compatible_blood_types = array('A-', 'O-');
+                        break;
+                    case 'B+':
+                        $compatible_blood_types = array('B+', 'B-', 'O+', 'O-');
+                        break;
+                    case 'B-':
+                        $compatible_blood_types = array('B-', 'O-');
+                        break;
+                    case 'AB+':
+                        $compatible_blood_types = array('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-');
+                        break;
+                    case 'AB-':
+                        $compatible_blood_types = array('A-', 'B-', 'AB-', 'O-');
+                        break;
+                    case 'O+':
+                        $compatible_blood_types = array('O+', 'O-');
+                        break;
+                    case 'O-':
+                        $compatible_blood_types = array('O-');
+                        break;
+                }
+                // Check if any of the compatible blood types exists in the stocks table
+                $stocks_query = "SELECT COUNT(*) FROM stocks WHERE BloodType IN ('" . implode("', '", $compatible_blood_types) . "')";
                 $stocks_query_result = mysqli_query($db, $stocks_query);
                 $stocks_count = mysqli_fetch_array($stocks_query_result)[0];
-
+            
                 // Display the approve button with the appropriate state
                 if ($stocks_count > 0) {
                     echo '<td><button class="btn-approve" onclick="approveRequest(' . $row['requestID'] . ')"><i class="fa-solid fa-check"></i></button>';
                 } else {
                     echo '<td><button class="btn-approve" disabled style="cursor: not-allowed; background-color: gray; color: white;"><i class="fa-solid fa-check"></i></button>';
                 }
+            
                             //echo '<td><button class="btn-approve" onclick="approveRequest(' . $row['requestID'] . ')"><i class="fa-solid fa-check"></i></button>';
                 echo '<button class="btn-decline" onclick="declineRequest(' . $row['requestID'] . ')"><i class="fa-solid fa-xmark"></i></button></td>';
             } else {
