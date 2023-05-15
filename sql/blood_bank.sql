@@ -63,7 +63,7 @@ CREATE TABLE `blood_stocks` (
   KEY `donorID_2` (`donorID`,`donorPrefix`),
   CONSTRAINT `blood_stocks_ibfk_1` FOREIGN KEY (`donorID`) REFERENCES `donor` (`donorID`),
   CONSTRAINT `blood_stocks_ibfk_2` FOREIGN KEY (`donorID`, `donorPrefix`) REFERENCES `donor` (`donorID`, `donorPrefix`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `blood_stocks` (
 
 LOCK TABLES `blood_stocks` WRITE;
 /*!40000 ALTER TABLE `blood_stocks` DISABLE KEYS */;
-INSERT INTO `blood_stocks` VALUES (1,'S',2,'D','2023-04-29 10:14:29'),(2,'S',3,'D','2023-04-29 10:15:13'),(3,'S',10,'D','2023-04-29 10:15:26'),(4,'S',3,'D','2023-05-02 00:41:53');
+INSERT INTO `blood_stocks` VALUES (1,'S',1,'D','2023-05-14 11:08:09'),(2,'S',9,'D','2023-05-14 11:08:12'),(3,'S',6,'D','2023-05-14 11:08:30'),(4,'S',2,'D','2023-05-14 11:08:39'),(5,'S',1,'D','2023-05-15 12:15:23'),(6,'S',11,'D','2023-05-15 12:22:16'),(7,'S',11,'D','2023-05-15 12:42:40'),(8,'S',9,'D','2023-05-15 12:42:43'),(9,'S',6,'D','2023-05-15 12:42:45');
 /*!40000 ALTER TABLE `blood_stocks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +90,7 @@ CREATE TABLE `contact` (
   `EmailAddress` varchar(100) NOT NULL,
   `Message` text NOT NULL,
   PRIMARY KEY (`contactID`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,6 +99,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` VALUES (1,'John Dexter Rubion Lanot','+6399548943','jdlanot.2003@gmail.com','hi');
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +124,7 @@ CREATE TABLE `donor` (
   `Date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`donorID`,`donorPrefix`),
   UNIQUE KEY `EmailAddress` (`EmailAddress`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +133,7 @@ CREATE TABLE `donor` (
 
 LOCK TABLES `donor` WRITE;
 /*!40000 ALTER TABLE `donor` DISABLE KEYS */;
-INSERT INTO `donor` VALUES (1,'D','Gregoor','Mylchreest','Male',20,'B+','+6398714364','gmylchreest0@forbes.com','Barangay 11','2023-04-29 08:19:32'),(2,'D','Adelaida','Aland','Female',31,'AB-','+6390031409','aaland1@meetup.com','Barangay 10','2023-04-29 08:19:38'),(3,'D','Mario','Howsden','Male',28,'A+','+6396903493','mhowsden2@lycos.com','Barangay 11','2023-04-29 08:19:45'),(4,'D','Caryl','Staddom','Female',25,'O+','+6394242757','cstaddom3@blogspot.com','Barangay 1','2023-04-29 08:19:54'),(5,'D','Frasier','Wandrey','Male',38,'AB-','+6392073799','fwandrey4@histats.com','Barangay 3','2023-04-29 08:20:00'),(6,'D','Dennison','Arangy','Male',36,'O+','+6397529088','darangy5@cbc.ca','Barangay 17','2023-04-29 08:20:04'),(7,'D','Moina','Bolan','Female',24,'O+','+6396557355','mbolan6@go.com','Barangay 4','2023-04-29 08:20:10'),(8,'D','Selby','Mecchi','Female',33,'B-','+6393553213','smecchi7@elegantthemes.com','Barangay 10','2023-04-29 08:20:17'),(9,'D','Bel','Blasdale','Female',27,'B-','+6399057341','bblasdale8@multiply.com','Barangay 15','2023-04-29 08:20:22'),(10,'D','Alden','McHale','Male',29,'B-','+6394276447','amchale9@forbes.com','Barangay 4','2023-04-29 08:20:25');
+INSERT INTO `donor` VALUES (1,'D','Charleen','Jesse','Male',38,'AB+','+63-976-090','cjesse0@vkontakte.ru','Banaba Silangan','2023-05-15 12:15:52'),(2,'D','Joel','Broinlich','Male',47,'A+','+63-965-426','jbroinlich1@marketwatch.com','Pallocan Silangan','2023-05-14 10:53:59'),(3,'D','Sholom','Foulis','Male',31,'O+','+63-935-217','sfoulis2@webnode.com','San Jose Sico','2023-05-14 11:09:32'),(4,'D','Edithe','Oxborrow','Female',34,'AB+','+63-947-834','eoxborrow3@mit.edu','San Agustin','2023-05-14 10:53:59'),(5,'D','Judd','Zottoli','Male',42,'B+','+63-950-678','jzottoli4@drupal.org','San Carlos','2023-05-14 10:53:59'),(6,'D','Kaine','Howick','Male',40,'AB+','+63-991-624','khowick5@free.fr','San Agustin','2023-05-14 10:53:59'),(7,'D','Isidora','Bettanay','Female',39,'B+','+63-967-731','ibettanay6@vimeo.com','San Agustin','2023-05-14 10:53:59'),(8,'D','Debby','Clunan','Female',30,'B+','+63-941-134','dclunan7@mozilla.org','Santa Clara','2023-05-14 10:53:59'),(9,'D','Dina','Medcraft','Female',37,'B-','+63-963-424','dmedcraft8@biblegateway.com','Pallocan Silangan','2023-05-14 10:54:00'),(11,'D','John Dexter','Lanot','Male',20,'A+','+6399548943','lanotjd678@gmail.com','Brgy. Cuta, Batangas City','2023-05-15 12:22:05');
 /*!40000 ALTER TABLE `donor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -154,7 +155,7 @@ CREATE TABLE `handed_over` (
   KEY `stockID` (`stockID`),
   CONSTRAINT `handed_over_ibfk_1` FOREIGN KEY (`requestID`) REFERENCES `request` (`requestID`),
   CONSTRAINT `handed_over_ibfk_2` FOREIGN KEY (`stockID`) REFERENCES `blood_stocks` (`stockID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,7 +164,7 @@ CREATE TABLE `handed_over` (
 
 LOCK TABLES `handed_over` WRITE;
 /*!40000 ALTER TABLE `handed_over` DISABLE KEYS */;
-INSERT INTO `handed_over` VALUES (2,'HO',5,3,'2023-05-02 01:39:45');
+INSERT INTO `handed_over` VALUES (1,'HO',3,2,'2023-05-14 11:08:19'),(2,'HO',10,1,'2023-05-14 11:08:21'),(3,'HO',6,4,'2023-05-15 12:18:51'),(4,'HO',2,6,'2023-05-15 12:23:15');
 /*!40000 ALTER TABLE `handed_over` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,7 +220,7 @@ CREATE TABLE `request` (
 
 LOCK TABLES `request` WRITE;
 /*!40000 ALTER TABLE `request` DISABLE KEYS */;
-INSERT INTO `request` VALUES (1,'R','Ethe','MacCroary','emaccroary0@posterou',0,'+6394568164','emaccroary0@nydailynews.com','Barangay 14','B+','Ethe MacCroary','2023-04-28 14:59:05','Pending'),(2,'R','Raine','Aizikovitz','raizikovitz1@cnn.com',0,'+6391083570','raizikovitz1@1und1.de','Barangay 2','AB+','Raine Aizikovitz','2023-04-28 14:59:05','Pending'),(3,'R','Ivory','Chamberlain','ichamberlain2@slashd',0,'+6395990107','ichamberlain2@csmonitor.com','Barangay 7','O+','Ivory Chamberlain','2023-04-28 14:59:05','Pending'),(4,'R','Issi','Richardson','irichardson3@nifty.c',0,'+6396649939','irichardson3@comsenz.com','Barangay 2','A+','Issi Richardson','2023-04-28 14:59:05','Pending'),(5,'R','Jacobo','Allebone','jallebone4@go.com',0,'+6392767740','jallebone4@ucla.edu','Barangay 20','B-','Jacobo Allebone','2023-05-02 01:39:45','Approved'),(6,'R','Haroun','Monahan','hmonahan5@nhs.uk',0,'+6390206005','hmonahan5@cdbaby.com','Barangay 3','A+','Haroun Monahan','2023-04-28 14:59:05','Pending'),(7,'R','Kaila','Gazey','kgazey6@hubpages.com',0,'+6395084490','kgazey6@bigcartel.com','Barangay 15','A-','Kaila Gazey','2023-04-28 14:59:05','Pending'),(8,'R','Garvin','Janatka','gjanatka7@biglobe.ne',0,'+6395531507','gjanatka7@networkadvertising.org','Barangay 2','O+','Garvin Janatka','2023-04-28 14:59:05','Pending'),(9,'R','Davon','Franca','dfranca8@cnbc.com',0,'+6399828204','dfranca8@ycombinator.com','Barangay 20','O+','Davon Franca','2023-04-28 14:59:05','Pending'),(10,'R','Cass','Mainston','cmainston9@scientifi',0,'+6395993795','cmainston9@smh.com.au','Barangay 12','B-','Cass Mainston','2023-04-28 14:59:05','Pending');
+INSERT INTO `request` VALUES (1,'R','Meggi','Willows','Female',25,'+63-910-275','mwillows0@imageshack.us','San Andres','O+','Dr. Clw Lum','2023-05-15 12:19:32','Declined'),(2,'R','Pepi','Amthor','Female',36,'+63-971-704','Dr. Rgj Wcp','Banaba Kanluran','A+','pamthor1@sbwire.com','2023-05-15 12:23:15','Approved'),(3,'R','Godfry','Audry','Male',24,'+63-900-886','gaudry2@ebay.com','Banaba Kanluran','B-','Dr. Qwb Hli','2023-05-14 11:08:19','Approved'),(4,'R','Rachael','Jagielski','Female',27,'+63-976-905','rjagielski3@parallels.com','Banaba Center','O+','Dr. Kwu The','2023-05-14 11:00:21','Pending'),(5,'R','Kaspar','Wolfit','Male',29,'+63-981-390','kwolfit4@diigo.com','San Andres','AB-','Dr. Bbh Buv','2023-05-14 11:00:21','Pending'),(6,'R','Barri','Borrell','Male',30,'+63-945-392','bborrell5@goo.ne.jp','San Carlos','A+','Dr. Zcv Adn','2023-05-15 12:18:51','Approved'),(7,'R','Armstrong','Soldner','Male',31,'+63-972-750','asoldner6@desdev.cn','Concepcion','B+','Dr. Aem Qmx','2023-05-14 11:00:21','Pending'),(8,'R','Irwin','Valett','Male',28,'+63-959-106','ivalett7@nbcnews.com','Santo Niño','O+','Dr. Mpm Hkb','2023-05-14 11:00:21','Pending'),(9,'R','Karia','Cancelier','Female',23,'+63-951-299','kcancelier8@abc.net.au','Kumintang Ibaba','O-','Dr. Qyk Lsf','2023-05-14 11:00:22','Pending'),(10,'R','Trix','Corner','Female',29,'+63-900-685','tcorner9@unblog.fr','Pinamucan Proper','AB+','Dr. Dwv Jju','2023-05-14 11:08:21','Approved');
 /*!40000 ALTER TABLE `request` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -287,4 +288,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-03 18:45:05
+-- Dump completed on 2023-05-15 20:44:07
