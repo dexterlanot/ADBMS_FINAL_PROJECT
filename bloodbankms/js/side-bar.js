@@ -64,3 +64,15 @@ function showBloodStocks(){
     });
 }
 
+
+function showContacts(){  
+    $.ajax({
+        url:"../php/contact.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent-section').html(data);
+        }
+    });
+}
+

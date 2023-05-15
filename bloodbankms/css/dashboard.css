@@ -248,7 +248,7 @@ body {
     font-size: 0.9em;
 }
 
-.cardBox .card .iconBox {
+.cardBox .card .iconBox{
     font-size: 2.5em;
     color: var(--white);
 }
@@ -260,7 +260,7 @@ body {
 
 .cardBox .card:hover .number,
 .cardBox .card:hover .cardName,
-.cardBox .card:hover .iconBox {
+.cardBox .card:hover .iconBox{
     background: -webkit-linear-gradient(#d92d2b, #da3330, #dc3934, #dd3f39, #de443d, #e25147, #e65d52, #e9685c, #ee7c6f, #f38e82, #f6a196, #f9b3aa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

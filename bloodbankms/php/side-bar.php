@@ -47,12 +47,17 @@
 					</a>
 				</li>
 				<li>
+					<a href="#contacts" onclick="showContacts()">
+						<span class="icon"><i class="fa-solid fa-envelope"></i></i></span>
+						<span class="title">Inbox</span>
+					</a>
+				</li>
+				<li>
 					<a href="login.php">
 						<span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
 						<span class="title">Sign Out</span>
 					</a>
 				</li>
-				
 			</ul>
 		</div>
 	</div>

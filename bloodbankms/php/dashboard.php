@@ -40,7 +40,7 @@
                         <div class="cardName">Donor</div>
                     </div>
                     <div class="iconBox">
-                        <i class="fa-solid fa-hand-holding-medical"></i>
+                       <i class="fa-solid fa-hand-holding-medical"></i>
                     </div>
                 </div>
                 <div class="card">
@@ -63,7 +63,7 @@
                         <div class="cardName">Blood Request</div>
                     </div>
                     <div class="iconBox">
-                        <i class="fa-solid fa-droplet"></i>
+                       <i class="fa-solid fa-droplet"></i>
                     </div>
                 </div>
                 <div class="card">
