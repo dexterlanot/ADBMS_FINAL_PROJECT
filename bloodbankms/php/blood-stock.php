@@ -1,6 +1,6 @@
 <main class="table">
     <div class="table-header">
-        <h2> Blood Stocks </h2>
+        <h2> Available Stocks </h2>
         <div class="search" id="search-bar">
             <input type="text" id="search" placeholder="Search">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
