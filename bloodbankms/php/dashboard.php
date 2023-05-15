@@ -83,7 +83,7 @@
                                 echo "$num_rows";
                             ?>
                         </div>
-                        <div class="cardName">Handed Over</div>
+                        <div class="cardName">Completed Requests</div>
                     </div>
                     <div class="iconBox">
                         <i class="fa-solid fa-solid fa-box"></i>
@@ -107,7 +107,7 @@
                                 echo "$num_rows";
                             ?> 
                         </div>
-                        <div class="cardName">Blood Stock</div>
+                        <div class="cardName">Available Stocks</div>
                     </div>
                     <div class="iconBox">
                         <i class="fa-solid fa-cubes-stacked"></i>

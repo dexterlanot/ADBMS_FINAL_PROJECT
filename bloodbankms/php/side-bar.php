@@ -37,7 +37,7 @@
 				<li>
 					<a href="#handedover" onclick="showHandedOver()">
 						<span class="icon"><i class="fa-solid fa-solid fa-box"></i></span>
-						<span class="title">Handed Over</span>
+						<span class="title">Completed Requests</span>
 					</a>
 				</li>			
 				<li>
