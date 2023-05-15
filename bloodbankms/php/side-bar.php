@@ -43,7 +43,7 @@
 				<li>
 					<a href="#bloodstock" onclick="showBloodStocks()">
 						<span class="icon"><i class="fa-solid fa-cubes-stacked"></i></span>
-						<span class="title">Blood Stock</span>
+						<span class="title">Available Stocks</span>
 					</a>
 				</li>
 				<li>
