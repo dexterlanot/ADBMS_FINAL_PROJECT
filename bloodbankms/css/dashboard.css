@@ -579,3 +579,6 @@ tbody .btn-decline:hover {
     background-position: right;
   }
 
+  td.narrow-column {
+    width: 100px; /* Adjust the width as per your requirement */
+  }

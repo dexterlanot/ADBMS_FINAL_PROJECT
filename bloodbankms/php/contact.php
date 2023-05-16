@@ -32,7 +32,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '<td>' . $row['Name'];
     echo '<td>' . $row['MobileNumber'] . '</td>';
     echo '<td>' . $row['EmailAddress'] . '</td>';
-    echo '<td>' . $row['Message'] . '</td>';
+    echo '<td class="narrow-column">' . $row['Message'] . '</td>';
     echo '<td>' . $row['Date'] . '</td>';
     echo '</tr>';
 }

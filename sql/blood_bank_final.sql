@@ -63,7 +63,7 @@ CREATE TABLE `blood_stocks` (
   KEY `donorID_2` (`donorID`,`donorPrefix`),
   CONSTRAINT `blood_stocks_ibfk_1` FOREIGN KEY (`donorID`) REFERENCES `donor` (`donorID`),
   CONSTRAINT `blood_stocks_ibfk_2` FOREIGN KEY (`donorID`, `donorPrefix`) REFERENCES `donor` (`donorID`, `donorPrefix`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `blood_stocks` (
 
 LOCK TABLES `blood_stocks` WRITE;
 /*!40000 ALTER TABLE `blood_stocks` DISABLE KEYS */;
-INSERT INTO `blood_stocks` VALUES (1,'S',1,'D','2023-05-14 11:08:09'),(2,'S',9,'D','2023-05-14 11:08:12'),(3,'S',6,'D','2023-05-14 11:08:30'),(4,'S',2,'D','2023-05-14 11:08:39'),(5,'S',1,'D','2023-05-15 12:15:23'),(6,'S',11,'D','2023-05-15 12:22:16'),(7,'S',11,'D','2023-05-15 12:42:40'),(8,'S',9,'D','2023-05-15 12:42:43'),(9,'S',6,'D','2023-05-15 12:42:45');
+INSERT INTO `blood_stocks` VALUES (1,'S',1,'D','2023-05-14 11:08:09'),(2,'S',9,'D','2023-05-14 11:08:12'),(3,'S',6,'D','2023-05-14 11:08:30'),(4,'S',2,'D','2023-05-14 11:08:39'),(5,'S',1,'D','2023-05-15 12:15:23'),(6,'S',11,'D','2023-05-15 12:22:16'),(7,'S',11,'D','2023-05-15 12:42:40'),(8,'S',9,'D','2023-05-15 12:42:43'),(9,'S',6,'D','2023-05-15 12:42:45'),(10,'S',3,'D','2023-05-16 21:54:32');
 /*!40000 ALTER TABLE `blood_stocks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,6 +89,7 @@ CREATE TABLE `contact` (
   `MobileNumber` varchar(11) NOT NULL,
   `EmailAddress` varchar(100) NOT NULL,
   `Message` text NOT NULL,
+  `Date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`contactID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -99,7 +100,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (1,'John Dexter Rubion Lanot','+6399548943','jdlanot.2003@gmail.com','hi');
+INSERT INTO `contact` VALUES (1,'John Dexter Rubion Lanot','+6399548943','jdlanot.2003@gmail.com','Hello,\n\nI hope this message finds you well. I am reaching out because I am in need of blood.','2023-05-16 22:14:51');
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -288,4 +289,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-15 20:44:07
+-- Dump completed on 2023-05-17  6:17:56
